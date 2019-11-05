@@ -64,6 +64,7 @@
             this.Name = "Changelog";
             this.ShowIcon = false;
             this.Text = "Changelog";
+            this.Load += new System.EventHandler(this.Changelog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

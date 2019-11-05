@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Battleship_Online.Updates
 {
@@ -17,11 +18,26 @@ namespace Battleship_Online.Updates
         {
             bool isChecked = true;
 
-            if(isChecked)
+            //Download lastest version file
+            var downloadClient = new WebClient();
+            downloadClient.DownloadFile(Dipendences.lastVersionFile, @"C:\Battleship Online\ver.txt");
+
+            string[] versionDownloaded = System.IO.File.ReadAllLines(@"C:\Battleship Online\ver.txt");
+
+            if(versionDownloaded[0] == Dipendences.version) //Check if this is the lastes version
+            {
+                isChecked = false;
+            }
+
+            if (isChecked)
             {
                 //Show update form
                 Changelog ch = new Changelog();
                 ch.ShowDialog();
+            }
+            else
+            {
+                Instruments.GMMessage("This is the lastest version!");
             }
         }
     }

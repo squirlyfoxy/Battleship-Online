@@ -16,6 +16,7 @@ namespace Battleship_Online
 
         internal static string version = "1";
 
-        internal static string onlineVersion = "https://pastebin.com/dl/MSCZ7Mqa"; //Url where is our lastest version
+        internal static string lastVersionFile = "https://pastebin.com/raw/MSCZ7Mqa";
+        internal static string changelogFile = "https://pastebin.com/raw/NjDie2h1";
     }
 }

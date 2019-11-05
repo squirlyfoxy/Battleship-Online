@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 using System.Windows.Forms;
 
 namespace Battleship_Online.Updates
@@ -26,6 +27,20 @@ namespace Battleship_Online.Updates
             //Start updating
             UpdateProgess up = new UpdateProgess();
             up.ShowDialog();
+        }
+
+        private void Changelog_Load(object sender, EventArgs e)
+        {
+            //Download changelog file
+            var downloadClient = new WebClient();
+            downloadClient.DownloadFile(Dipendences.changelogFile, @"C:\Battleship Online\ch.txt");
+
+            string[] ch = System.IO.File.ReadAllLines(@"C:\Battleship Online\ch.txt");                      //Write "ch.txt" contents in textBox1
+
+            foreach (string r in ch)
+            {
+                textBox1.AppendText(r);
+            }
         }
     }
 }
