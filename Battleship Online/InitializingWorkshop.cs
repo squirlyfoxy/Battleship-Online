@@ -30,9 +30,10 @@ namespace Battleship_Online
             }
             else
             {
-                //It's the first time :(, creating directory and downloading files....
+                //It's the first time :(, creating directory and downloading files.... (Not working)
                 Instruments.GMMessage("This is the first time that I'm running in this machine, I will have to download some essential files for my execution...");
 
+                /*
                 var download = new WebClient();
 
                 Instruments.GMMessage("Downloading Battleship Online - Chat.exe...");
@@ -43,6 +44,7 @@ namespace Battleship_Online
 
                 Instruments.GMMessage("Downloading Battleship Online - Other.exe...");
                 download.DownloadFile(Dipendences.otherDownload, @"C:\Battleship Online\Battleship Online - Other.exe");
+                */
 
                 Instruments.GMMessage("DONE");
             }
@@ -58,11 +60,11 @@ namespace Battleship_Online
             }
         }
 
-        private static bool CheckDir()
+        private static bool CheckDir() //Check if game files alrealy exist
         {
             bool toReturn = false;
 
-            if (System.IO.File.Exists(@"C:\Battleship Online\configuration.conf") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Chat.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Me.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Other.exe"))
+            if (System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Chat.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Me.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Other.exe"))
             {
                 toReturn = true;
             }

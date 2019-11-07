@@ -42,7 +42,7 @@ namespace Battleship_Online.Security
             return result;
         }
 
-        internal static string CalculateMD5Hash(string input)
+        internal static string CalculateMD5Hash(string input) //Calc md5 hach
         {
             // step 1, calculate MD5 hash from input
             MD5 md5 = System.Security.Cryptography.MD5.Create();

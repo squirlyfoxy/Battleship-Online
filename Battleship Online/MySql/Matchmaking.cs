@@ -18,7 +18,7 @@ namespace Battleship_Online.MySql
          */
         internal static void Start()
         {
-            string[] usrs;
+            string[] usrs; //Usernames array
             Random rand = new Random();
             int randomized;
 
@@ -32,7 +32,7 @@ namespace Battleship_Online.MySql
 
                 usrs = new string[Usr.table.Rows.Count];
 
-                for (int i = 0; i < Usr.table.Rows.Count; i++)
+                for (int i = 0; i < Usr.table.Rows.Count; i++) //Put query in usrs
                 {
                     usrs[i] = Usr.table.Rows[i][0].ToString();
                 }
@@ -40,7 +40,7 @@ namespace Battleship_Online.MySql
                 if(usrs.Length >= 1)
                 {
                     randomized = rand.Next(0, usrs.Length);
-                    Dipendences.enemyUsername = usrs[randomized]; //Select a random enemy from database
+                    Dipendences.enemyUsername = usrs[randomized]; //Select a random enemy from table
 
                     if (Dipendences.enemyUsername != Dipendences.username)
                         break; //Matched
@@ -52,7 +52,7 @@ namespace Battleship_Online.MySql
 
             Thread.Sleep(10000);
 
-            MySqlCommand del = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete usrer from matchmaking database
+            MySqlCommand del = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete usrer from matchmaking table
             del.ExecuteNonQuery();
 
             Usr.table.Clear();

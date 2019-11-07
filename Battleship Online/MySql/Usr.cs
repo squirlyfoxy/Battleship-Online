@@ -119,7 +119,7 @@ namespace Battleship_Online.MySql
 
             Dipendences.password = Security.AES.CalculateMD5Hash(Dipendences.password);
 
-            MySqlCommand com = new MySqlCommand("INSERT INTO `usr`(`username`, `password`) VALUES (@usr, @pass)", conn);
+            MySqlCommand com = new MySqlCommand("INSERT INTO `usr`(`username`, `password`) VALUES (@usr, @pass)", conn); //Puts username and password(md5 hash) in usr table
 
             com.Parameters.Add("@usr", MySqlDbType.VarChar).Value = Dipendences.username;
             com.Parameters.Add("@pass", MySqlDbType.VarChar).Value = Dipendences.password;

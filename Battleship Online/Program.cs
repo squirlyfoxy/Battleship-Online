@@ -11,6 +11,8 @@ namespace Battleship_Online
          * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
          * Class summary: Main Class
          * 
+         * Per modificare questi file prima bisogna essere provvisti dell'estensione di GitHub per visual studio per poter caricare i cambiamenti e avere sempre un backup
+         * 
          * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
          */
         static void Main(string[] args)
@@ -69,7 +71,7 @@ namespace Battleship_Online
             Console.ReadKey();
         }
 
-        internal static void Continue()
+        internal static void Continue() //Continue Main method execution
         {
             string inp;
 
@@ -92,11 +94,11 @@ namespace Battleship_Online
             switch (inp)
             {
                 case "1":
-                    MySql.Matchmaking.Start();
+                    MySql.Matchmaking.Start(); //Start matchmaking
                     break;
 
                 case "2":
-                    Instruments.Manual();
+                    Instruments.Manual(); //Show manual
                     break;
 
                 default:
