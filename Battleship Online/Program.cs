@@ -15,10 +15,83 @@ namespace Battleship_Online
          */
         static void Main(string[] args)
         {
-            //Layout
-            Console.Title = "Battleship Online v. " + Dipendences.version;
+            try
+            {
+                //Layout
+                Console.Title = "Battleship Online v. " + Dipendences.version;
 
-            InitializingWorkshop.Check();
+                InitializingWorkshop.Check();
+                MySql.Usr.Connect(); //Start connection to mysql database
+
+                string inp;
+
+                Console.Clear();
+                Console.WriteLine("Type: ");
+                Console.WriteLine("1    -    LogIn");
+                Console.WriteLine("2    -    SignUp");
+
+                do
+                {
+                  ret:
+                    Console.Write(": ");
+                    inp = Console.ReadLine();
+
+                    if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
+                        goto ret;
+                } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
+
+                Console.Clear();
+
+                switch (inp)
+                {
+                    case "1":
+                        MySql.Usr.Login();
+                        break;
+
+                    case "2":
+                        MySql.Usr.Signup();
+                        break;
+
+                    default:
+                        break;
+                }
+
+                if(Dipendences.logged)
+                {
+                    //Continue
+                    Console.Clear();
+
+                    Console.WriteLine("Type: ");
+                    Console.WriteLine("1    -    Matchmaking");
+                    Console.WriteLine("2    -    Manual");
+
+                    do
+                    {
+                       ex:
+                        Console.Write(": ");
+                        inp = Console.ReadLine();
+
+                        if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
+                            goto ex;
+                    } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
+
+                    switch(inp)
+                    {
+                        case "1":
+                            MySql.Matchmaking.Start();
+                            break;
+
+                        case "2":
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            } catch(Exception ex)
+            {
+                Instruments.ErrMessage(ex.ToString()); //Error
+            }
 
             Console.ReadKey();
         }

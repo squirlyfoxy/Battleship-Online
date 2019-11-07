@@ -16,8 +16,6 @@ namespace Battleship_Online
 
         internal static void Check()
         {
-            CreateDir();
-
             Updates.CheckForUpdates.Check();
 
             Instruments.GMMessage("I'm checking if this is the first time you run me ...");
@@ -32,17 +30,9 @@ namespace Battleship_Online
                 //It's the first time :(, creating directory and downloading files....
                 Instruments.GMMessage("This is the first time that I'm running in this machine, I will have to download some essential files for my execution...");
 
-                Instruments.GMMessage("DONE");
-            }
-        }
-
-        private static void CreateDir()
-        {
-            //Create Battleship Directory
-            if(!System.IO.Directory.Exists(@"C:\Battleship Online\"))
-            {
                 Instruments.GMMessage("Creating directory in: C:/");
                 System.IO.Directory.CreateDirectory(@"C:\Battleship Online\");
+                Instruments.GMMessage("DONE");
             }
         }
 
@@ -50,7 +40,7 @@ namespace Battleship_Online
         {
             bool toReturn = false;
 
-            if (System.IO.File.Exists(@"C:\Battleship Online\configuration.conf") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Chat.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Me.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Other.exe"))
+            if (System.IO.Directory.Exists(@"C:\Battleship Online\") && System.IO.File.Exists(@"C:\Battleship Online\configuration.conf") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Chat.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Me.exe") && System.IO.File.Exists(@"C:\Battleship Online\Battleship Online - Other.exe"))
             {
                 toReturn = true;
             }
