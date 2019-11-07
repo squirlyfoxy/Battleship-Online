@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Battleship_Online
 {
@@ -31,6 +32,17 @@ namespace Battleship_Online
             {
                 //It's the first time :(, creating directory and downloading files....
                 Instruments.GMMessage("This is the first time that I'm running in this machine, I will have to download some essential files for my execution...");
+
+                var download = new WebClient();
+
+                Instruments.GMMessage("Downloading Battleship Online - Chat.exe...");
+                download.DownloadFile(Dipendences.chatDownload, @"C:\Battleship Online\Battleship Online - Chat.exe");
+
+                Instruments.GMMessage("Downloading Battleship Online - Me.exe...");
+                download.DownloadFile(Dipendences.meDownload, @"C:\Battleship Online\Battleship Online - Me.exe");
+
+                Instruments.GMMessage("Downloading Battleship Online - Other.exe...");
+                download.DownloadFile(Dipendences.otherDownload, @"C:\Battleship Online\Battleship Online - Other.exe");
 
                 Instruments.GMMessage("DONE");
             }

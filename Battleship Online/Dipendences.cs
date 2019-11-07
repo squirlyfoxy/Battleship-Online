@@ -20,6 +20,11 @@ namespace Battleship_Online
         internal static string changelogFile = "https://pastebin.com/raw/NjDie2h1";
         internal static string connStrDownload = "https://pastebin.com/raw/3kUNdJbx";
 
+        internal static string chatDownload = "https://1drv.ms/u/s!AuxZ1gApaXsM72Kh7HwEHM95X-Gc";
+        internal static string meDownload = "https://1drv.ms/u/s!AuxZ1gApaXsM7RR-eRfO70kGbTzp";
+        internal static string otherDownload = "https://1drv.ms/u/s!AuxZ1gApaXsM702oo0Nv1GfMAn5r";
+        internal static string launcherDownload = "https://1drv.ms/u/s!AuxZ1gApaXsM7QkEZFXSlNI5NUdU";
+
         internal static string connStr; //Connection string for mysql
 
         internal static string username;
