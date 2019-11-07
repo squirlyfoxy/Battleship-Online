@@ -59,34 +59,7 @@ namespace Battleship_Online
                 if(Dipendences.logged)
                 {
                     //Continue
-                    Console.Clear();
-
-                    Console.WriteLine("Type: ");
-                    Console.WriteLine("1    -    Matchmaking");
-                    Console.WriteLine("2    -    Manual");
-
-                    do
-                    {
-                       ex:
-                        Console.Write(": ");
-                        inp = Console.ReadLine();
-
-                        if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
-                            goto ex;
-                    } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
-
-                    switch(inp)
-                    {
-                        case "1":
-                            MySql.Matchmaking.Start();
-                            break;
-
-                        case "2":
-                            break;
-
-                        default:
-                            break;
-                    }
+                    Continue();
                 }
             } catch(Exception ex)
             {
@@ -94,6 +67,41 @@ namespace Battleship_Online
             }
 
             Console.ReadKey();
+        }
+
+        internal static void Continue()
+        {
+            string inp;
+
+            Console.Clear();
+
+            Console.WriteLine("Type: ");
+            Console.WriteLine("1    -    Matchmaking");
+            Console.WriteLine("2    -    Manual");
+
+            do
+            {
+                ex:
+                Console.Write(": ");
+                inp = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
+                    goto ex;
+            } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
+
+            switch (inp)
+            {
+                case "1":
+                    MySql.Matchmaking.Start();
+                    break;
+
+                case "2":
+                    Instruments.Manual();
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }

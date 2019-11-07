@@ -37,5 +37,37 @@ namespace Battleship_Online
             Console.ResetColor();
             Console.WriteLine(mesg);
         }
+
+        internal static void Manual() //Print game manual
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            for(int i = 0; i < Console.LargestWindowWidth / 2 - 2; i++) //Write banner 1
+            {
+                Console.Write("*");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("**                                                 Battleship Online                                                **");
+
+            for (int i = 0; i < Console.LargestWindowWidth / 2 - 2; i++) //Write banner 2
+            {
+                Console.Write("*");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.ResetColor();
+
+            Console.WriteLine("Battleship Online is an Open Source online game written in c# based on MySql Database");
+            Console.WriteLine("Programmers: Leonardo Baldazzi (@leonardobaldazzi_) && Tommaso Brandinelli (@tommib.117)");
+
+            Console.WriteLine();
+            Console.Write("Press Any Key To Continue.....");
+            Console.ReadKey();
+
+            Program.Continue();
+        }
     }
 }

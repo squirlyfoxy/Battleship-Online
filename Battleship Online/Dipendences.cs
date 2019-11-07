@@ -24,6 +24,8 @@ namespace Battleship_Online
 
         internal static string username;
         internal static string password;
+        internal static string enemyUsername;
+
         internal static bool logged = false;
     }
 }
