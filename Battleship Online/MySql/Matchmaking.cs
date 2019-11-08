@@ -52,8 +52,22 @@ namespace Battleship_Online.MySql
 
             Thread.Sleep(10000);
 
-            MySqlCommand del = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete usrer from matchmaking table
-            del.ExecuteNonQuery();
+            //Create tables
+
+            MySqlCommand cr1 = new MySqlCommand("CREATE TABLE IF NOT EXISTS 'sql7311027'.'Mosse_" + Dipendences.username + Dipendences.enemyUsername + "'( " +
+                "`User` text," +
+	            "`x` text," +
+	            "`y` text," +
+	            "`Esito` char); ", Usr.conn); //Create table Mosse_MeOther
+            cr1.ExecuteNonQuery();
+
+            MySqlCommand cr2 = new MySqlCommand("CREATE TABLE IF NOT EXISTS 'sql7311027'.'Pos_" + Dipendences.username + Dipendences.enemyUsername + "'(" +
+                "`User` text," +
+	            "`x` text," +
+	            "`y` text); ", Usr.conn); //Create table Pos_MeOther
+            cr2.ExecuteNonQuery();
+
+            //Who is the first?
 
             Usr.table.Clear();
             Console.WriteLine("The enemy is: " + Dipendences.enemyUsername);

@@ -13,6 +13,8 @@ namespace Battleship_Online
          * 
          * Per modificare questi file prima bisogna essere provvisti dell'estensione di GitHub per visual studio per poter caricare i cambiamenti e avere sempre un backup
          * 
+         * Prima di avviare compilare in modalità release
+         * 
          * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
          */
         static void Main(string[] args)
