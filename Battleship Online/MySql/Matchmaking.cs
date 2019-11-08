@@ -11,7 +11,7 @@ namespace Battleship_Online.MySql
          * Programmers: Leonardo Baldazzi, Tommaso Brandinelli
          * Company: OSS inc.
          * Program summary: Simulating Battleship Online via MYSQL Database
-         * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
+         * SubProgram summary: Log-In/Sign-Up user, download `.conf` files, check for updates
          * Class summary: Matchmaking Class
          * 
          * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
@@ -22,7 +22,10 @@ namespace Battleship_Online.MySql
             Random rand = new Random();
             int randomized;
 
-            MySqlCommand com = new MySqlCommand("INSERT INTO `matchmaking`(`username`) VALUES ('" + Dipendences.username + "')", Usr.conn); //Insert user in matchmaking database
+            MySqlCommand com = new MySqlCommand("INSERT INTO `matchmaking`(`username`) VALUES (@usr)", Usr.conn); //Insert user in matchmaking database
+
+            com.Parameters.Add("@usr", MySqlDbType.VarChar).Value = Dipendences.username;
+
             com.ExecuteNonQuery();
 
             while (true)
@@ -50,27 +53,14 @@ namespace Battleship_Online.MySql
                 Console.WriteLine("Matchmaking....");
             }
 
-            Thread.Sleep(10000);
-
-            //Create tables
-
-            MySqlCommand cr1 = new MySqlCommand("CREATE TABLE IF NOT EXISTS 'sql7311027'.'Mosse_" + Dipendences.username + Dipendences.enemyUsername + "'( " +
-                "`User` text," +
-	            "`x` text," +
-	            "`y` text," +
-	            "`Esito` char); ", Usr.conn); //Create table Mosse_MeOther
-            cr1.ExecuteNonQuery();
-
-            MySqlCommand cr2 = new MySqlCommand("CREATE TABLE IF NOT EXISTS 'sql7311027'.'Pos_" + Dipendences.username + Dipendences.enemyUsername + "'(" +
-                "`User` text," +
-	            "`x` text," +
-	            "`y` text); ", Usr.conn); //Create table Pos_MeOther
-            cr2.ExecuteNonQuery();
-
-            //Who is the first?
-
             Usr.table.Clear();
+
+            MySqlCommand delM = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in matchmaking table
+            delM.ExecuteNonQuery();
+
+
             Console.WriteLine("The enemy is: " + Dipendences.enemyUsername);
+
         }
     }
 }
