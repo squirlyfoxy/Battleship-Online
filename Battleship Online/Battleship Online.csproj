@@ -66,6 +66,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dipendences.cs" />
+    <Compile Include="Game Form\Game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game Form\Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game Form\Put.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Game Form\Put.Designer.cs">
+      <DependentUpon>Put.cs</DependentUpon>
+    </Compile>
     <Compile Include="InitializingWorkshop.cs" />
     <Compile Include="Instruments.cs" />
     <Compile Include="MySql\Matchmaking.cs" />
@@ -93,6 +105,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <EmbeddedResource Include="Game Form\Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Game Form\Put.resx">
+      <DependentUpon>Put.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Updates\Changelog.resx">
       <DependentUpon>Changelog.cs</DependentUpon>
     </EmbeddedResource>

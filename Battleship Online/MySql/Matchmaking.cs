@@ -58,8 +58,14 @@ namespace Battleship_Online.MySql
             MySqlCommand delM = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in matchmaking table
             delM.ExecuteNonQuery();
 
-
             Console.WriteLine("The enemy is: " + Dipendences.enemyUsername);
+
+            Thread.Sleep(1000);
+
+            Console.Clear();
+
+            Game_Form.Game gm = new Game_Form.Game();
+            gm.ShowDialog();
 
         }
     }
