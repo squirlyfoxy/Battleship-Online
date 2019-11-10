@@ -18,6 +18,7 @@ namespace Battleship_Online.Updates
         {
             bool isChecked = true;
 
+            /*
             //Download lastest version file
             var downloadClient = new WebClient();
             downloadClient.DownloadFile(Dipendences.lastVersionFile, @"C:\Battleship Online\ver.txt");
@@ -29,7 +30,9 @@ namespace Battleship_Online.Updates
                 isChecked = false;
             }
 
-            if (isChecked)
+            */
+
+            if (!isChecked)
             {
                 //Show update form
                 Changelog ch = new Changelog();

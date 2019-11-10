@@ -31,14 +31,19 @@ namespace Battleship_Online
         internal static string password;
         internal static string enemyUsername;
 
-        internal static int[] x = new int[10]; //Coordinate nostre
-        internal static int[] y = new int[10];
+        internal static int[] x = new int[HOW_MANY_SHIPS]; //Coordinate nostre
+        internal static int[] y = new int[HOW_MANY_SHIPS];
 
-        internal static char[,] campo = new char[10, 10]; //Campo matrix
+        internal static int[] enemyX = new int[HOW_MANY_SHIPS]; //Coordinate nemiche
+        internal static int[] enemyY = new int[HOW_MANY_SHIPS];
+
+        internal static char[,] campoNostro = new char[10, 10]; //Campo matrix
         internal static char[,] campoNemico = new char[10, 10]; //Campo Nemico matrix
 
         internal static bool logged = false;
 
         internal const int HOW_MANY_SHIPS = 7;
+
+        internal static char defStatus = 's';
     }
 }
