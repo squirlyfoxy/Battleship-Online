@@ -69,8 +69,12 @@ namespace Battleship_Online.MySql
             Game_Form.Put p = new Game_Form.Put();
             p.ShowDialog();
 
+            Console.WriteLine("I'm waiting.....");
+
             Game_Form.Game g = new Game_Form.Game();
             g.ShowDialog();
+
+            Console.Clear();
 
         }
     }

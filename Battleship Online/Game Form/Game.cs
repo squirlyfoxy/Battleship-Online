@@ -20,9 +20,12 @@ namespace Battleship_Online.Game_Form
             label1.Text = Dipendences.username;
             label2.Text = Dipendences.enemyUsername;
 
+            textBox1.WordWrap = true;
+            textBox4.WordWrap = true;
+
             //Pos navi
 
-            foreach(int n in Dipendences.x) //Insert my ships positions
+            foreach (int n in Dipendences.x) //Insert my ships positions
             {
                 MySqlCommand add = new MySqlCommand("INSERT INTO `Posizioni`(`username`, `x`, `y`, `Status`) VALUES (@usr, @x, @y, @Status)", MySql.Usr.conn); //Insert ships positions in Posizioni database
                 add.Parameters.Add("@usr", MySqlDbType.VarChar).Value = Dipendences.username;
@@ -41,23 +44,33 @@ namespace Battleship_Online.Game_Form
             foreach (int n in Dipendences.x)
             {
                 Dipendences.campoNostro[Dipendences.x[pos], Dipendences.y[pos]] = Dipendences.defStatus;
-            }
 
-            string matrixString = "";
+                pos++;
+            }
 
             for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++) //Scrivilo dentro la textbox
             {
                 for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
-                    //matrixString += Dipendences.campoNostro[i, x].ToString() + "   ";
-                    Console.Write(Dipendences.campoNostro[i, x].ToString() + "   ");
+                    if (x < Dipendences.campoNostro.GetLength(1) - 2)
+                    {
+                        if(Dipendences.campoNostro[i, x] == 's')
+                        {
+                            textBox1.Text += Dipendences.campoNostro[i, x].ToString() + "            ";
+                            //Console.Write(Dipendences.campoNostro[i, x].ToString() + "   ");
+                        }
+                        else
+                        {
+                            textBox1.Text += "            ";
+                        }
+                    }
+                    else
+                    {
+                        textBox1.Text += Dipendences.campoNostro[i, x].ToString() + Environment.NewLine;
+                    }
                 }
-
-                //matrixString += Environment.NewLine;
-                Console.WriteLine();
+                //Console.WriteLine();
             }
-
-            textBox1.Text = matrixString;
 
             Aspetta(0);
 

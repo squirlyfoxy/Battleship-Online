@@ -84,6 +84,20 @@ namespace Battleship_Online.MySql
             }
 
             table.Clear();
+
+            Del(); //Delete all posizioni and mosse rows
+        }
+
+        private static void Del()
+        {
+            MySqlCommand delP = new MySqlCommand("DELETE FROM `Posizioni` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in Posizioni table
+            delP.ExecuteNonQuery();
+
+            MySqlCommand delM = new MySqlCommand("DELETE FROM `Mosse` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in Mosse table
+            delM.ExecuteNonQuery();
+
+            MySqlCommand delMa = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in matchmaking table
+            delMa.ExecuteNonQuery();
         }
 
         internal static void Signup() //Signup in mysql database
@@ -129,6 +143,8 @@ namespace Battleship_Online.MySql
 
             if (com.ExecuteNonQuery() == 1) //Execute query
                 Dipendences.logged = true;
+
+            Del(); //Delete all posizioni and mosse rows
         }
     }
 }

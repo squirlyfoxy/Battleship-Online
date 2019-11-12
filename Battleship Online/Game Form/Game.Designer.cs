@@ -131,7 +131,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label26.Location = new System.Drawing.Point(25, 291);
+            this.label26.Location = new System.Drawing.Point(25, 159);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(13, 13);
             this.label26.TabIndex = 26;
@@ -141,7 +141,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label27.Location = new System.Drawing.Point(25, 265);
+            this.label27.Location = new System.Drawing.Point(25, 146);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(13, 13);
             this.label27.TabIndex = 25;
@@ -151,7 +151,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label24.Location = new System.Drawing.Point(25, 232);
+            this.label24.Location = new System.Drawing.Point(25, 133);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(13, 13);
             this.label24.TabIndex = 24;
@@ -161,7 +161,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label25.Location = new System.Drawing.Point(25, 206);
+            this.label25.Location = new System.Drawing.Point(25, 120);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(13, 13);
             this.label25.TabIndex = 23;
@@ -171,7 +171,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label22.Location = new System.Drawing.Point(25, 175);
+            this.label22.Location = new System.Drawing.Point(25, 107);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(13, 13);
             this.label22.TabIndex = 22;
@@ -181,7 +181,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label23.Location = new System.Drawing.Point(25, 149);
+            this.label23.Location = new System.Drawing.Point(25, 94);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(13, 13);
             this.label23.TabIndex = 21;
@@ -191,7 +191,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label20.Location = new System.Drawing.Point(25, 120);
+            this.label20.Location = new System.Drawing.Point(25, 81);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(13, 13);
             this.label20.TabIndex = 20;
@@ -201,7 +201,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label21.Location = new System.Drawing.Point(25, 94);
+            this.label21.Location = new System.Drawing.Point(25, 68);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(13, 13);
             this.label21.TabIndex = 19;
@@ -211,7 +211,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label19.Location = new System.Drawing.Point(25, 68);
+            this.label19.Location = new System.Drawing.Point(25, 55);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(13, 13);
             this.label19.TabIndex = 18;
