@@ -1,0 +1,20 @@
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Battleship Online.exe.config
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Battleship Online.exe
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Battleship Online.pdb
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\BouncyCastle.Crypto.dll
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Google.Protobuf.dll
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\MySql.Data.dll
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Renci.SshNet.dll
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Google.Protobuf.xml
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\MySql.Data.xml
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\bin\Release\Renci.SshNet.xml
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.csprojAssemblyReference.cache
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship_Online.Game_Form.Game.resources
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship_Online.Game_Form.Put.resources
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship_Online.Updates.Changelog.resources
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship_Online.Updates.UpdateProgess.resources
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.csproj.GenerateResource.cache
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.csproj.CoreCompileInputs.cache
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.csproj.CopyComplete
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.exe
+C:\Users\foxch\Desktop\Battleship Online\Battleship Online\obj\Release\Battleship Online.pdb

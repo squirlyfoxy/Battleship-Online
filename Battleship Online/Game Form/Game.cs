@@ -21,8 +21,6 @@ namespace Battleship_Online.Game_Form
             label2.Text = Dipendences.enemyUsername;
 
             //Pos navi
-            Put p = new Put();
-            p.ShowDialog();
 
             foreach(int n in Dipendences.x) //Insert my ships positions
             {
@@ -45,13 +43,21 @@ namespace Battleship_Online.Game_Form
                 Dipendences.campoNostro[Dipendences.x[pos], Dipendences.y[pos]] = Dipendences.defStatus;
             }
 
-            for(int i = 0; i < Dipendences.HOW_MANY_SHIPS; i++)
+            string matrixString = "";
+
+            for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++) //Scrivilo dentro la textbox
             {
-                for (int x = 0; x < Dipendences.HOW_MANY_SHIPS; i++)
+                for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
-                    textBox3.AppendText(Dipendences.campoNostro[x, i].ToString() + "   ");
+                    //matrixString += Dipendences.campoNostro[i, x].ToString() + "   ";
+                    Console.Write(Dipendences.campoNostro[i, x].ToString() + "   ");
                 }
+
+                //matrixString += Environment.NewLine;
+                Console.WriteLine();
             }
+
+            textBox1.Text = matrixString;
 
             Aspetta(0);
 
@@ -84,14 +90,27 @@ namespace Battleship_Online.Game_Form
 
                 while (true)
                 {
-                    c = Count("SELECT Count(*) FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'");
+                    //Conta quante sono le posizioni
+                    MySql.Usr.command.CommandText = "SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'";
+                    MySqlDataReader readPos = MySql.Usr.command.ExecuteReader();
+
+                    MySql.Usr.table.Load(readPos);
+
+                    c = MySql.Usr.table.Rows.Count;
+
+                    readPos.Close();
 
                     if (c == Dipendences.HOW_MANY_SHIPS)
                     {
                         label7.Visible = false;
+                        MySql.Usr.table.Clear();
+
+
 
                         break;
                     }
+
+                    MySql.Usr.table.Clear();
                 }
             }
             else
@@ -99,21 +118,6 @@ namespace Battleship_Online.Game_Form
                 label7.Visible = true;
 
             }
-        }
-
-        private int Count(string v) //conta righe
-        {
-            int recCount = 0;
-
-            MySql.Usr.adapter = new MySqlDataAdapter(v, MySql.Usr.conn);
-            MySql.Usr.adapter.Fill(MySql.Usr.table);
-
-            if (MySql.Usr.table.Rows.Count >= 0)
-            {
-                recCount = MySql.Usr.table.Rows.Count;
-            }
-
-            return recCount;
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -127,6 +131,7 @@ namespace Battleship_Online.Game_Form
                     //Attack a boat
 
 
+                    //This is the lasts boat?
 
                     MossePosizioni.Visible = false;
 
@@ -146,6 +151,11 @@ namespace Battleship_Online.Game_Form
         }
 
         private void Me_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

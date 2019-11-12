@@ -27,6 +27,8 @@ namespace Battleship_Online
                 InitializingWorkshop.Check();
                 MySql.Usr.Connect(); //Start connection to mysql database
 
+                int a;
+
                 string inp;
 
                 Console.Clear();
@@ -40,7 +42,7 @@ namespace Battleship_Online
                     Console.Write(": ");
                     inp = Console.ReadLine();
 
-                    if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
+                    if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp) || !int.TryParse(inp, out a))
                         goto ret;
                 } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
 
@@ -76,6 +78,7 @@ namespace Battleship_Online
         internal static void Continue() //Continue Main method execution
         {
             string inp;
+            int a;
 
             Console.Clear();
 
@@ -89,7 +92,7 @@ namespace Battleship_Online
                 Console.Write(": ");
                 inp = Console.ReadLine();
 
-                if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp))
+                if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp) || !int.TryParse(inp, out a))
                     goto ex;
             } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
 

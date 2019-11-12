@@ -29,7 +29,6 @@ namespace Battleship_Online.Game_Form
             {
                 Putting();
 
-                this.Dispose();
             }
         }
 
@@ -60,7 +59,9 @@ namespace Battleship_Online.Game_Form
                 {
                     if (int.TryParse(textBox3.Text, out Dipendences.y[putted - 1]) && (Dipendences.y[putted - 1] > -1 && Dipendences.y[putted - 1] < 10))
                     {
-                        label1.Text = (putted + 1) + " Ships";
+                        putted++;
+
+                        this.Dispose();
                     }
                     else
                     {

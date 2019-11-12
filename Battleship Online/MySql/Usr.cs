@@ -22,6 +22,7 @@ namespace Battleship_Online.MySql
         internal static MySqlConnection conn;
         internal static MySqlDataAdapter adapter;
         internal static DataTable table = new DataTable();
+        internal static MySqlCommand command;
 
         internal static void Connect() //Connect to MySql
         {
@@ -41,6 +42,8 @@ namespace Battleship_Online.MySql
 
             conn = new MySqlConnection(Dipendences.connStr);
             conn.Open(); //Open connection
+
+            command = conn.CreateCommand();
         }
 
         internal static void Login() //Login in mysql database
