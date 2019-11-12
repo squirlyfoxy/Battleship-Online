@@ -29,7 +29,16 @@
         private void InitializeComponent()
         {
             this.Me = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.riga9me = new System.Windows.Forms.Label();
+            this.riga8me = new System.Windows.Forms.Label();
+            this.riga7me = new System.Windows.Forms.Label();
+            this.riga6me = new System.Windows.Forms.Label();
+            this.riga5me = new System.Windows.Forms.Label();
+            this.riga4me = new System.Windows.Forms.Label();
+            this.riga3me = new System.Windows.Forms.Label();
+            this.riga2me = new System.Windows.Forms.Label();
+            this.riga1me = new System.Windows.Forms.Label();
+            this.riga0me = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -51,7 +60,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Enemy = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label65 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
@@ -90,7 +98,16 @@
             // 
             // Me
             // 
-            this.Me.Controls.Add(this.textBox1);
+            this.Me.Controls.Add(this.riga9me);
+            this.Me.Controls.Add(this.riga8me);
+            this.Me.Controls.Add(this.riga7me);
+            this.Me.Controls.Add(this.riga6me);
+            this.Me.Controls.Add(this.riga5me);
+            this.Me.Controls.Add(this.riga4me);
+            this.Me.Controls.Add(this.riga3me);
+            this.Me.Controls.Add(this.riga2me);
+            this.Me.Controls.Add(this.riga1me);
+            this.Me.Controls.Add(this.riga0me);
             this.Me.Controls.Add(this.label26);
             this.Me.Controls.Add(this.label27);
             this.Me.Controls.Add(this.label24);
@@ -117,21 +134,99 @@
             this.Me.TabIndex = 0;
             this.Me.Paint += new System.Windows.Forms.PaintEventHandler(this.Me_Paint);
             // 
-            // textBox1
+            // riga9me
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(67, 39);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(335, 265);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            this.riga9me.AutoSize = true;
+            this.riga9me.Location = new System.Drawing.Point(75, 291);
+            this.riga9me.Name = "riga9me";
+            this.riga9me.Size = new System.Drawing.Size(0, 13);
+            this.riga9me.TabIndex = 66;
+            this.riga9me.Click += new System.EventHandler(this.label37_Click);
+            // 
+            // riga8me
+            // 
+            this.riga8me.AutoSize = true;
+            this.riga8me.Location = new System.Drawing.Point(75, 265);
+            this.riga8me.Name = "riga8me";
+            this.riga8me.Size = new System.Drawing.Size(0, 13);
+            this.riga8me.TabIndex = 65;
+            this.riga8me.Click += new System.EventHandler(this.label36_Click);
+            // 
+            // riga7me
+            // 
+            this.riga7me.AutoSize = true;
+            this.riga7me.Location = new System.Drawing.Point(75, 232);
+            this.riga7me.Name = "riga7me";
+            this.riga7me.Size = new System.Drawing.Size(0, 13);
+            this.riga7me.TabIndex = 64;
+            this.riga7me.Click += new System.EventHandler(this.label35_Click);
+            // 
+            // riga6me
+            // 
+            this.riga6me.AutoSize = true;
+            this.riga6me.Location = new System.Drawing.Point(75, 206);
+            this.riga6me.Name = "riga6me";
+            this.riga6me.Size = new System.Drawing.Size(0, 13);
+            this.riga6me.TabIndex = 63;
+            this.riga6me.Click += new System.EventHandler(this.label34_Click);
+            // 
+            // riga5me
+            // 
+            this.riga5me.AutoSize = true;
+            this.riga5me.Location = new System.Drawing.Point(75, 175);
+            this.riga5me.Name = "riga5me";
+            this.riga5me.Size = new System.Drawing.Size(0, 13);
+            this.riga5me.TabIndex = 62;
+            // 
+            // riga4me
+            // 
+            this.riga4me.AutoSize = true;
+            this.riga4me.Location = new System.Drawing.Point(75, 149);
+            this.riga4me.Name = "riga4me";
+            this.riga4me.Size = new System.Drawing.Size(0, 13);
+            this.riga4me.TabIndex = 61;
+            this.riga4me.Click += new System.EventHandler(this.label32_Click);
+            // 
+            // riga3me
+            // 
+            this.riga3me.AutoSize = true;
+            this.riga3me.Location = new System.Drawing.Point(75, 120);
+            this.riga3me.Name = "riga3me";
+            this.riga3me.Size = new System.Drawing.Size(0, 13);
+            this.riga3me.TabIndex = 60;
+            // 
+            // riga2me
+            // 
+            this.riga2me.AutoSize = true;
+            this.riga2me.Location = new System.Drawing.Point(75, 94);
+            this.riga2me.Name = "riga2me";
+            this.riga2me.Size = new System.Drawing.Size(0, 13);
+            this.riga2me.TabIndex = 59;
+            this.riga2me.Click += new System.EventHandler(this.label30_Click);
+            // 
+            // riga1me
+            // 
+            this.riga1me.AutoSize = true;
+            this.riga1me.Location = new System.Drawing.Point(75, 68);
+            this.riga1me.Name = "riga1me";
+            this.riga1me.Size = new System.Drawing.Size(0, 13);
+            this.riga1me.TabIndex = 58;
+            this.riga1me.Click += new System.EventHandler(this.label29_Click);
+            // 
+            // riga0me
+            // 
+            this.riga0me.AutoSize = true;
+            this.riga0me.Location = new System.Drawing.Point(75, 42);
+            this.riga0me.Name = "riga0me";
+            this.riga0me.Size = new System.Drawing.Size(0, 13);
+            this.riga0me.TabIndex = 57;
+            this.riga0me.Click += new System.EventHandler(this.label28_Click);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label26.Location = new System.Drawing.Point(25, 159);
+            this.label26.Location = new System.Drawing.Point(25, 291);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(13, 13);
             this.label26.TabIndex = 26;
@@ -141,7 +236,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label27.Location = new System.Drawing.Point(25, 146);
+            this.label27.Location = new System.Drawing.Point(25, 265);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(13, 13);
             this.label27.TabIndex = 25;
@@ -151,7 +246,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label24.Location = new System.Drawing.Point(25, 133);
+            this.label24.Location = new System.Drawing.Point(25, 232);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(13, 13);
             this.label24.TabIndex = 24;
@@ -161,7 +256,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label25.Location = new System.Drawing.Point(25, 120);
+            this.label25.Location = new System.Drawing.Point(25, 206);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(13, 13);
             this.label25.TabIndex = 23;
@@ -171,7 +266,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label22.Location = new System.Drawing.Point(25, 107);
+            this.label22.Location = new System.Drawing.Point(25, 175);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(13, 13);
             this.label22.TabIndex = 22;
@@ -181,7 +276,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label23.Location = new System.Drawing.Point(25, 94);
+            this.label23.Location = new System.Drawing.Point(25, 149);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(13, 13);
             this.label23.TabIndex = 21;
@@ -191,7 +286,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label20.Location = new System.Drawing.Point(25, 81);
+            this.label20.Location = new System.Drawing.Point(25, 120);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(13, 13);
             this.label20.TabIndex = 20;
@@ -201,7 +296,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label21.Location = new System.Drawing.Point(25, 68);
+            this.label21.Location = new System.Drawing.Point(25, 94);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(13, 13);
             this.label21.TabIndex = 19;
@@ -211,7 +306,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label19.Location = new System.Drawing.Point(25, 55);
+            this.label19.Location = new System.Drawing.Point(25, 68);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(13, 13);
             this.label19.TabIndex = 18;
@@ -319,7 +414,6 @@
             // 
             // Enemy
             // 
-            this.Enemy.Controls.Add(this.textBox4);
             this.Enemy.Controls.Add(this.label65);
             this.Enemy.Controls.Add(this.label67);
             this.Enemy.Controls.Add(this.label66);
@@ -345,15 +439,6 @@
             this.Enemy.Size = new System.Drawing.Size(472, 339);
             this.Enemy.TabIndex = 1;
             // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(79, 43);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(335, 265);
-            this.textBox4.TabIndex = 28;
-            // 
             // label65
             // 
             this.label65.AutoSize = true;
@@ -371,6 +456,7 @@
             this.label67.Size = new System.Drawing.Size(13, 13);
             this.label67.TabIndex = 37;
             this.label67.Text = "0";
+            this.label67.Click += new System.EventHandler(this.label67_Click);
             // 
             // label66
             // 
@@ -549,18 +635,19 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Me Usr";
+            this.label1.Text = "your 7th sea";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(658, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.Size = new System.Drawing.Size(159, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Enemy Usr";
+            this.label2.Text = "one of the other 6 of the 7th sea";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -728,7 +815,15 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label riga0me;
+        private System.Windows.Forms.Label riga9me;
+        private System.Windows.Forms.Label riga8me;
+        private System.Windows.Forms.Label riga7me;
+        private System.Windows.Forms.Label riga6me;
+        private System.Windows.Forms.Label riga5me;
+        private System.Windows.Forms.Label riga4me;
+        private System.Windows.Forms.Label riga3me;
+        private System.Windows.Forms.Label riga2me;
+        private System.Windows.Forms.Label riga1me;
     }
 }

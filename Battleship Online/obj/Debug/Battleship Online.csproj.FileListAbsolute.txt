@@ -38,3 +38,22 @@ C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csproj.CopyComplete
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.exe
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.pdb
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Battleship Online.exe.config
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Battleship Online.exe
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Battleship Online.pdb
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Google.Protobuf.dll
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\MySql.Data.dll
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Renci.SshNet.dll
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Google.Protobuf.xml
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\MySql.Data.xml
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\bin\Debug\Renci.SshNet.xml
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.csprojAssemblyReference.cache
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship_Online.Game_Form.Game.resources
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship_Online.Game_Form.Put.resources
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship_Online.Updates.Changelog.resources
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship_Online.Updates.UpdateProgess.resources
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.csproj.GenerateResource.cache
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.csproj.CopyComplete
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.exe
+C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.pdb

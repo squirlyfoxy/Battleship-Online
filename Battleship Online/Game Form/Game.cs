@@ -20,8 +20,7 @@ namespace Battleship_Online.Game_Form
             label1.Text = Dipendences.username;
             label2.Text = Dipendences.enemyUsername;
 
-            textBox1.WordWrap = true;
-            textBox4.WordWrap = true;
+           
 
             //Pos navi
 
@@ -43,33 +42,104 @@ namespace Battleship_Online.Game_Form
 
             foreach (int n in Dipendences.x)
             {
-                Dipendences.campoNostro[Dipendences.x[pos], Dipendences.y[pos]] = Dipendences.defStatus;
+                Dipendences.campoNostro[n, Dipendences.y[pos]] = Dipendences.defStatus;
 
                 pos++;
             }
 
-            for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++) //Scrivilo dentro la textbox
-            {
-                for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
+            for(int x = 0; x < Dipendences.campoNostro.GetLength(0); x++) 
+            { 
+                if(Dipendences.campoNostro[x,0] == 'N') 
                 {
-                    if (x < Dipendences.campoNostro.GetLength(1) - 2)
-                    {
-                        if(Dipendences.campoNostro[i, x] == 's')
-                        {
-                            textBox1.Text += Dipendences.campoNostro[i, x].ToString() + "            ";
-                            //Console.Write(Dipendences.campoNostro[i, x].ToString() + "   ");
-                        }
-                        else
-                        {
-                            textBox1.Text += "            ";
-                        }
-                    }
-                    else
-                    {
-                        textBox1.Text += Dipendences.campoNostro[i, x].ToString() + Environment.NewLine;
-                    }
+                    riga0me.Text += (Dipendences.campoNostro[x, 0] + "           ");
                 }
-                //Console.WriteLine();
+                else 
+                {
+                    riga0me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 1] == 'N')
+                {
+                    riga1me.Text += (Dipendences.campoNostro[x, 1] + "           ");
+                }
+                else
+                {
+                    riga1me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 2] == 'N')
+                {
+                    riga2me.Text += (Dipendences.campoNostro[x, 2] + "           ");
+                }
+                else
+                {
+                    riga2me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 3] == 'N')
+                {
+                    riga3me.Text += (Dipendences.campoNostro[x, 3] + "           ");
+                }
+                else
+                {
+                    riga3me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 4] == 'N')
+                {
+                    riga4me.Text += (Dipendences.campoNostro[x, 4] + "           ");
+                }
+                else
+                {
+                    riga4me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 5] == 'N')
+                {
+                    riga5me.Text += (Dipendences.campoNostro[x, 5] + "           ");
+                }
+                else
+                {
+                    riga5me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 6] == 'N')
+                {
+                    riga6me.Text += (Dipendences.campoNostro[x, 6] + "           ");
+                }
+                else
+                {
+                    riga6me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 7] == 'N')
+                {
+                    riga7me.Text += (Dipendences.campoNostro[x, 7] + "           ");
+                }
+                else
+                {
+                    riga7me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 8] == 'N')
+                {
+                    riga8me.Text += (Dipendences.campoNostro[x, 8] + "           ");
+                }
+                else
+                {
+                    riga8me.Text += ("            ");
+                }
+                //
+                if (Dipendences.campoNostro[x, 9] == 'N')
+                {
+                    riga9me.Text += (Dipendences.campoNostro[x, 9] + "           ");
+                }
+                else
+                {
+                    riga9me.Text += ("            ");
+                }
+                //
+
             }
 
             Aspetta(0);
@@ -169,6 +239,56 @@ namespace Battleship_Online.Game_Form
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label67_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label28_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label30_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label32_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label34_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label35_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label36_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label37_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

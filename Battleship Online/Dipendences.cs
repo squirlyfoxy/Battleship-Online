@@ -44,6 +44,6 @@ namespace Battleship_Online
 
         internal const int HOW_MANY_SHIPS = 7;
 
-        internal static char defStatus = 's';
+        internal static char defStatus = 'N';
     }
 }
