@@ -49,7 +49,7 @@ namespace Battleship_Online.Game_Form
 
             for(int x = 0; x < Dipendences.campoNostro.GetLength(0); x++) 
             { 
-                if(Dipendences.campoNostro[x,0] == 'N') 
+                if(Dipendences.campoNostro[x,0] == Dipendences.defStatus) 
                 {
                     riga0me.Text += (Dipendences.campoNostro[x, 0] + "           ");
                 }
@@ -58,7 +58,7 @@ namespace Battleship_Online.Game_Form
                     riga0me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 1] == 'N')
+                if (Dipendences.campoNostro[x, 1] == Dipendences.defStatus)
                 {
                     riga1me.Text += (Dipendences.campoNostro[x, 1] + "           ");
                 }
@@ -67,7 +67,7 @@ namespace Battleship_Online.Game_Form
                     riga1me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 2] == 'N')
+                if (Dipendences.campoNostro[x, 2] == Dipendences.defStatus)
                 {
                     riga2me.Text += (Dipendences.campoNostro[x, 2] + "           ");
                 }
@@ -76,7 +76,7 @@ namespace Battleship_Online.Game_Form
                     riga2me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 3] == 'N')
+                if (Dipendences.campoNostro[x, 3] == Dipendences.defStatus)
                 {
                     riga3me.Text += (Dipendences.campoNostro[x, 3] + "           ");
                 }
@@ -85,7 +85,7 @@ namespace Battleship_Online.Game_Form
                     riga3me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 4] == 'N')
+                if (Dipendences.campoNostro[x, 4] == Dipendences.defStatus)
                 {
                     riga4me.Text += (Dipendences.campoNostro[x, 4] + "           ");
                 }
@@ -94,7 +94,7 @@ namespace Battleship_Online.Game_Form
                     riga4me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 5] == 'N')
+                if (Dipendences.campoNostro[x, 5] == Dipendences.defStatus)
                 {
                     riga5me.Text += (Dipendences.campoNostro[x, 5] + "           ");
                 }
@@ -103,7 +103,7 @@ namespace Battleship_Online.Game_Form
                     riga5me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 6] == 'N')
+                if (Dipendences.campoNostro[x, 6] == Dipendences.defStatus)
                 {
                     riga6me.Text += (Dipendences.campoNostro[x, 6] + "           ");
                 }
@@ -112,7 +112,7 @@ namespace Battleship_Online.Game_Form
                     riga6me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 7] == 'N')
+                if (Dipendences.campoNostro[x, 7] == Dipendences.defStatus)
                 {
                     riga7me.Text += (Dipendences.campoNostro[x, 7] + "           ");
                 }
@@ -121,7 +121,7 @@ namespace Battleship_Online.Game_Form
                     riga7me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 8] == 'N')
+                if (Dipendences.campoNostro[x, 8] == Dipendences.defStatus)
                 {
                     riga8me.Text += (Dipendences.campoNostro[x, 8] + "           ");
                 }
@@ -130,7 +130,7 @@ namespace Battleship_Online.Game_Form
                     riga8me.Text += ("            ");
                 }
                 //
-                if (Dipendences.campoNostro[x, 9] == 'N')
+                if (Dipendences.campoNostro[x, 9] == Dipendences.defStatus)
                 {
                     riga9me.Text += (Dipendences.campoNostro[x, 9] + "           ");
                 }
