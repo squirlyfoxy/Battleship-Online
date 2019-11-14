@@ -102,6 +102,9 @@ namespace Battleship_Online.MySql
 
             MySqlCommand delMa = new MySqlCommand("DELETE FROM `matchmaking` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in matchmaking table
             delMa.ExecuteNonQuery();
+
+            MySqlCommand delTu = new MySqlCommand("DELETE FROM `Turno` WHERE `username` = '" + Dipendences.username + "'", Usr.conn); //Delete in matchmaking table
+            delTu.ExecuteNonQuery();
         }
 
         internal static void Signup() //Signup in mysql database
