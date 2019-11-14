@@ -26,6 +26,7 @@ namespace Battleship_Online.MySql
 
         internal static void Connect() //Connect to MySql
         {
+            /*
             //Download Connection string (enrypted)
             var downloadClient = new WebClient();
             downloadClient.DownloadFile(Dipendences.connStrDownload, @"C:\Battleship Online\connStr.txt");
@@ -39,6 +40,9 @@ namespace Battleship_Online.MySql
 
             Dipendences.connStr = Security.AES.Decrypt(cont[0], en.GetBytes("!e2e4ab3a960c3!a"), en.GetBytes("128"));
             Dipendences.connStr= Dipendences.connStr.Remove(Dipendences.connStr.Length - 3, 3); //Cut last 3 special char
+            */
+
+            Dipendences.connStr = "Server=51.83.46.129;Database=gioco;Uid=dio;Pwd=leonardo1;";
 
             conn = new MySqlConnection(Dipendences.connStr);
             conn.Open(); //Open connection

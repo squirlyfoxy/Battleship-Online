@@ -13,6 +13,8 @@ namespace Battleship_Online.Game_Form
             InitializeComponent();
         }
 
+        private static int firstTime = 0;
+
         private void Game_Load(object sender, EventArgs e)
         {
             int pos = 0;
@@ -47,13 +49,55 @@ namespace Battleship_Online.Game_Form
                 pos++;
             }
 
-            for(int x = 0; x < Dipendences.campoNostro.GetLength(0); x++) 
-            { 
-                if(Dipendences.campoNostro[x,0] == Dipendences.defStatus) 
+            Aspetta(0);
+
+            Aggiorna();
+
+            //Metti le posizioni del nemico dentro un'altra matrice
+            MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
+            MySql.Usr.adapter.Fill(MySql.Usr.table);
+
+            pos = 0;
+
+            for(int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro due array e una matrice
+            {
+                if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
+                {
+                    Dipendences.enemyX[i] = Convert.ToInt32(MySql.Usr.table.Rows[i][1]);
+                    Dipendences.enemyY[i] = Convert.ToInt32(MySql.Usr.table.Rows[i][2]);
+                }
+            }
+
+            //Qual'è il primo turno?
+
+
+            MySql.Usr.table.Clear();
+
+            label7.Visible = false;
+        }
+
+        private void Aggiorna()
+        {
+            //Aggiorna il mio campo
+
+            riga0me.Text = ""; //Resetta la labels del mio campo
+            riga1me.Text = "";
+            riga2me.Text = "";
+            riga3me.Text = "";
+            riga4me.Text = "";
+            riga5me.Text = "";
+            riga6me.Text = "";
+            riga7me.Text = "";
+            riga8me.Text = "";
+            riga9me.Text = "";
+
+            for (int x = 0; x < Dipendences.campoNostro.GetLength(0); x++)
+            {
+                if (Dipendences.campoNostro[x, 0] == Dipendences.defStatus)
                 {
                     riga0me.Text += (Dipendences.campoNostro[x, 0] + "           ");
                 }
-                else 
+                else
                 {
                     riga0me.Text += ("            ");
                 }
@@ -138,29 +182,122 @@ namespace Battleship_Online.Game_Form
                 {
                     riga9me.Text += ("            ");
                 }
-                //
-
             }
 
-            Aspetta(0);
+            //Aggiorna le labels del campo avversario
+            label28.Text = "";
+            label29.Text = "";
+            label30.Text = "";
+            label31.Text = "";
+            label32.Text = "";
+            label33.Text = "";
+            label34.Text = "";
+            label35.Text = "";
+            label36.Text = "";
+            label37.Text = "";
 
-            //Metti le posizioni del nemico dentro un'altra matrice
-            MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
-            MySql.Usr.adapter.Fill(MySql.Usr.table);
-
-            pos = 0;
-
-            for(int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
+            if(!(firstTime == 0))
             {
-                if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
+                //Aggiorna le label
+                for (int x = 0; x < Dipendences.campoNemico.GetLength(0); x++)
                 {
-                    Dipendences.campoNemico[Convert.ToInt32(MySql.Usr.table.Rows[i][1]), Convert.ToInt32(MySql.Usr.table.Rows[i][2])] = Dipendences.defStatus;
+                    if (Dipendences.campoNemico[x, 0] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 0] == Dipendences.mancatoStatus)
+                    {
+                        label28.Text += (Dipendences.campoNemico[x, 0] + "           ");
+                    }
+                    else
+                    {
+                        label28.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 1] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 1] == Dipendences.mancatoStatus)
+                    {
+                        label29.Text += (Dipendences.campoNemico[x, 1] + "           ");
+                    }
+                    else
+                    {
+                        label29.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 2] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 2] == Dipendences.mancatoStatus)
+                    {
+                        label30.Text += (Dipendences.campoNemico[x, 2] + "           ");
+                    }
+                    else
+                    {
+                        label30.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 3] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 3] == Dipendences.mancatoStatus)
+                    {
+                        label31.Text += (Dipendences.campoNemico[x, 3] + "           ");
+                    }
+                    else
+                    {
+                        label31.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 4] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 4] == Dipendences.mancatoStatus)
+                    {
+                        label32.Text += (Dipendences.campoNemico[x, 4] + "           ");
+                    }
+                    else
+                    {
+                        label32.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 5] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 5] == Dipendences.mancatoStatus)
+                    {
+                        label33.Text += (Dipendences.campoNemico[x, 5] + "           ");
+                    }
+                    else
+                    {
+                        label33.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 6] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 6] == Dipendences.mancatoStatus)
+                    {
+                        label34.Text += (Dipendences.campoNemico[x, 6] + "           ");
+                    }
+                    else
+                    {
+                        label34.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 7] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 7] == Dipendences.mancatoStatus)
+                    {
+                        label35.Text += (Dipendences.campoNemico[x, 7] + "           ");
+                    }
+                    else
+                    {
+                        label35.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 8] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 8] == Dipendences.mancatoStatus)
+                    {
+                        label36.Text += (Dipendences.campoNemico[x, 8] + "           ");
+                    }
+                    else
+                    {
+                        label36.Text += ("            ");
+                    }
+                    //
+                    if (Dipendences.campoNemico[x, 9] == Dipendences.colpitoStatus || Dipendences.campoNemico[x, 9] == Dipendences.mancatoStatus)
+                    {
+                        label37.Text += (Dipendences.campoNostro[x, 9] + "           ");
+                    }
+                    else
+                    {
+                        label37.Text += ("            ");
+                    }
                 }
+
+                firstTime++;
             }
 
-            MySql.Usr.table.Clear();
-
-            label7.Visible = false;
+            //Update remaning and sunken ships
+            label3.Text = "Remaining Ships: " + Dipendences.remaningShips;
+            label3.Text = "Sunken Ships: " + Dipendences.sunkenShips;
         }
 
         private void Aspetta(int v) //v == 0 (posizioni), v == 1(attacchi)
@@ -198,6 +335,8 @@ namespace Battleship_Online.Game_Form
             }
             else
             {
+
+
                 label7.Visible = true;
 
             }
@@ -219,6 +358,8 @@ namespace Battleship_Online.Game_Form
                     MossePosizioni.Visible = false;
 
                     Aspetta(1);
+
+                    Aggiorna();
 
                     MossePosizioni.Visible = true;
                 }

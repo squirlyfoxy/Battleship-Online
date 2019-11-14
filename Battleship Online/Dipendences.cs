@@ -40,10 +40,15 @@ namespace Battleship_Online
         internal static char[,] campoNostro = new char[10, 10]; //Campo matrix
         internal static char[,] campoNemico = new char[10, 10]; //Campo Nemico matrix
 
+        internal static int remaningShips = HOW_MANY_SHIPS;
+        internal static int sunkenShips = 0;
+
         internal static bool logged = false;
 
         internal const int HOW_MANY_SHIPS = 7;
 
         internal static char defStatus = 'N';
+        internal static char mancatoStatus = '0';
+        internal static char colpitoStatus = 'X';
     }
 }
