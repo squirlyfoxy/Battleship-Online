@@ -29,7 +29,6 @@ C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\bin\Debug\MySql.Data.xml
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\bin\Debug\Renci.SshNet.xml
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csprojAssemblyReference.cache
-C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Game_Form.Game.resources
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Game_Form.Put.resources
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Updates.Changelog.resources
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Updates.UpdateProgess.resources

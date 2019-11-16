@@ -66,12 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dipendences.cs" />
-    <Compile Include="Game Form\Game.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Game Form\Game.Designer.cs">
-      <DependentUpon>Game.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Game Form\Game.cs" />
     <Compile Include="Game Form\Put.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,9 +100,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Game Form\Game.resx">
-      <DependentUpon>Game.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Game Form\Put.resx">
       <DependentUpon>Put.cs</DependentUpon>
     </EmbeddedResource>

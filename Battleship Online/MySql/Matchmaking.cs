@@ -71,10 +71,10 @@ namespace Battleship_Online.MySql
 
             Console.WriteLine("I'm waiting.....");
 
-            Game_Form.Game g = new Game_Form.Game();
-            g.ShowDialog();
-
             Console.Clear();
+
+
+            Game_Form.Game.Initialize();
 
         }
     }
