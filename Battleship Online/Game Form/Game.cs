@@ -79,7 +79,9 @@ namespace Battleship_Online.Game_Form
 
             Aggiorna();
 
-            
+            Program.Continue();
+
+
         }
 
         private static void Gioca()
@@ -164,8 +166,6 @@ namespace Battleship_Online.Game_Form
                     Console.WriteLine("Hai vinto!!!");
                     Console.ReadKey();
 
-                    Program.Continue();
-
                     break;
                 }
                 else
@@ -177,15 +177,12 @@ namespace Battleship_Online.Game_Form
                         Console.WriteLine("Hai perso :(");
                         Console.ReadKey();
 
-                        Program.Continue();
-
                         break;
                     }
                 }
 
                 Console.ReadKey();
 
-                Aggiorna();
             }
         }
 
