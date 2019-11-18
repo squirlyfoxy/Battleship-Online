@@ -41,6 +41,7 @@ namespace Battleship_Online
         internal static char[,] campoNemico = new char[10, 10]; //Campo Nemico matrix
         internal static char[,] campoNemicoDiNuovo = new char[10, 10]; //Campo Nemico matrix
 
+
         internal static int remaningShips = HOW_MANY_SHIPS;
         internal static int meRemaningShips = HOW_MANY_SHIPS;
         internal static int sunkenShips = 0;

@@ -74,10 +74,7 @@ namespace Battleship_Online.Game_Form
             Aggiorna();
 
             //Thread t = new Thread(Gioca); //Aggiorna mentre chiedi all'utente le variabili
-
             Gioca();
-
-            Aggiorna();
 
             Program.Continue();
 
@@ -94,6 +91,11 @@ namespace Battleship_Online.Game_Form
             for (; true ; ) //Giocaaaa
             {
                 //Thread.Sleep(2000);
+
+                if(firstTime > 0)
+                {
+                    Aggiorna();
+                }
 
                 do
                 {
@@ -228,7 +230,7 @@ namespace Battleship_Online.Game_Form
                 Console.Write(g6);
                 for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
-                    if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus || Dipendences.campoNostro[i, x] == Dipendences.defStatus || Dipendences.campoNostro[i, x] == Dipendences.mancatoStatus)
+                    if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus || Dipendences.campoNostro[i, x] == Dipendences.defStatus)
                     {
                         Console.Write(Dipendences.campoNostro[i, x]);
 
@@ -278,7 +280,7 @@ namespace Battleship_Online.Game_Form
             for (int i = 0; i < Dipendences.campoNemico.GetLength(0); i++)
             {
                 Console.Write(g6);
-                if (firstTime != 0)
+                if (firstTime == 1)
                 {
                     for (int x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
                     {
