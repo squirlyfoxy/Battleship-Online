@@ -55,12 +55,17 @@ namespace Battleship_Online.Game_Form
 
             pos = 0;
 
+            /*
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro due array
             {
                 if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
                 {
                     Dipendences.enemyX[i] = Convert.ToInt32(MySql.Usr.table.Rows[i][1]);
                     Dipendences.enemyY[i] = Convert.ToInt32(MySql.Usr.table.Rows[i][2]);
+
+                    Dipendences.campoNemicoDiNuovo[Dipendences.enemyX[i], Dipendences.enemyY[pos]] = Convert.ToChar(MySql.Usr.table.Rows[i][3]);
+
+                    pos++;
                 }
             }
 
@@ -70,6 +75,7 @@ namespace Battleship_Online.Game_Form
 
                 pos++;
             }
+            */
 
             Aggiorna();
 
@@ -92,10 +98,7 @@ namespace Battleship_Online.Game_Form
             {
                 //Thread.Sleep(2000);
 
-                if(firstTime > 0)
-                {
-                    Aggiorna();
-                }
+                Aggiorna();
 
                 do
                 {
@@ -131,7 +134,7 @@ namespace Battleship_Online.Game_Form
                 add.ExecuteNonQuery();
 
                 //Controlla se alla coordinata esiste una nave
-                if (Dipendences.campoNemicoDiNuovo[conX, conY] != Dipendences.defStatus)
+                if (Dipendences.campoNemico[conX, conY] != Dipendences.defStatus)
                 {
                     //Non colpita :(
                     Console.Write("Non colpita");
@@ -140,11 +143,11 @@ namespace Battleship_Online.Game_Form
                     MySqlDataReader upNonColpito = MySql.Usr.command.ExecuteReader();
 
                     Dipendences.campoNemico[conX, conY] = Dipendences.mancatoStatus; //Update matrice
-                    upNonColpito.Close();
+                    Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.mancatoStatus;
 
-                    Dipendences.campoNemicoDiNuovo[conX, conY] = 'a';
+                    upNonColpito.Close();
                 }
-                else if (Dipendences.campoNemicoDiNuovo[conX, conY] == Dipendences.defStatus)
+                else if (Dipendences.campoNemico[conX, conY] == Dipendences.defStatus)
                 {
                     //Colpita :)
                     Console.Write("Colpia :)");
@@ -153,12 +156,11 @@ namespace Battleship_Online.Game_Form
                     MySqlDataReader upColpito = MySql.Usr.command.ExecuteReader();
 
                     Dipendences.campoNemico[conX, conY] = Dipendences.colpitoStatus; //Update matrice
+                    Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.colpitoStatus;
 
                     Dipendences.remaningShips--;
                     Dipendences.sunkenShips++;
                     upColpito.Close();
-
-                    Dipendences.campoNemicoDiNuovo[conX, conY] = 'a';
                 }
 
                 if (Dipendences.sunkenShips == Dipendences.HOW_MANY_SHIPS)
@@ -230,12 +232,15 @@ namespace Battleship_Online.Game_Form
                 Console.Write(g6);
                 for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
-                    if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus || Dipendences.campoNostro[i, x] == Dipendences.defStatus)
+                    if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus)
                     {
-                        Console.Write(Dipendences.campoNostro[i, x]);
+                        Console.Write(Dipendences.colpitoStatus);
 
                         if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus)
                             Dipendences.remaningShips--;
+                    } else if(Dipendences.campoNostro[i, x] == Dipendences.defStatus)
+                    {
+                        Console.Write(Dipendences.defStatus);
                     }
                     else
                     {
@@ -280,16 +285,18 @@ namespace Battleship_Online.Game_Form
             for (int i = 0; i < Dipendences.campoNemico.GetLength(0); i++)
             {
                 Console.Write(g6);
-                if (firstTime == 1)
+                if (firstTime != 0)
                 {
                     for (int x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
                     {
-                        if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus || Dipendences.campoNemico[i, x] == Dipendences.mancatoStatus)
+                        if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus)
                         {
-                            Console.Write(Dipendences.campoNemico[i, x]);
+                            Console.Write(Dipendences.colpitoStatus);
 
-                            if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus)
-                                Dipendences.sunkenShips++;
+                            Dipendences.sunkenShips++;
+                        } else if(Dipendences.campoNemico[i, x] == Dipendences.mancatoStatus)
+                        {
+                            Console.Write(Dipendences.mancatoStatus);
                         }
                         else
                         {
