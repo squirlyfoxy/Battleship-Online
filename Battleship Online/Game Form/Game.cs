@@ -17,8 +17,6 @@ namespace Battleship_Online.Game_Form
         private const char g5 = '╝';
         private const char g6 = '║';
 
-        private static int firstTime = 0; 
-
         internal static void Initialize()
         {
             int pos = 0;
@@ -49,13 +47,13 @@ namespace Battleship_Online.Game_Form
 
             Aspetta(0); //Aspetta che finisca l'avversario di posizionare le navi
 
+            /*
             //Metti le posizioni del nemico dentro un'altra matrice
             MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
             MySql.Usr.adapter.Fill(MySql.Usr.table);
 
             pos = 0;
 
-            /*
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro due array
             {
                 if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
@@ -137,26 +135,26 @@ namespace Battleship_Online.Game_Form
                 if (Dipendences.campoNemico[conX, conY] != Dipendences.defStatus)
                 {
                     //Non colpita :(
-                    Console.Write("Non colpita");
+                    Console.Write("Non Colpita :(");
 
                     MySql.Usr.command.CommandText = "UPDATE `Posizioni` SET `Status`='" + Dipendences.mancatoStatus + "' WHERE username='" + Dipendences.enemyUsername + "' AND x='" + conX + "' AND y='" + conY + "';";
                     MySqlDataReader upNonColpito = MySql.Usr.command.ExecuteReader();
 
                     Dipendences.campoNemico[conX, conY] = Dipendences.mancatoStatus; //Update matrice
-                    Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.mancatoStatus;
+                    //Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.mancatoStatus;
 
                     upNonColpito.Close();
                 }
-                else if (Dipendences.campoNemico[conX, conY] == Dipendences.defStatus)
+                else
                 {
                     //Colpita :)
-                    Console.Write("Colpia :)");
+                    Console.Write("Colpita :)");
 
                     MySql.Usr.command.CommandText = "UPDATE `Posizioni` SET `Status`='" + Dipendences.colpitoStatus + "' WHERE username='" + Dipendences.enemyUsername + "' AND x='" + conX + "' AND y='" + conY + "';";
                     MySqlDataReader upColpito = MySql.Usr.command.ExecuteReader();
 
                     Dipendences.campoNemico[conX, conY] = Dipendences.colpitoStatus; //Update matrice
-                    Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.colpitoStatus;
+                    //Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.colpitoStatus;
 
                     Dipendences.remaningShips--;
                     Dipendences.sunkenShips++;
@@ -192,6 +190,9 @@ namespace Battleship_Online.Game_Form
 
         private static void Aggiorna() //Aggiorna la gui
         {
+
+            int x = 0;
+
             Console.Clear();
 
             Dipendences.remaningShips = Dipendences.HOW_MANY_SHIPS;
@@ -214,30 +215,35 @@ namespace Battleship_Online.Game_Form
             }
             Console.WriteLine(g4);
 
-            //Acquisisci la matrice
+            //Acquisisci la mia matrice
             MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.username + "'", MySql.Usr.conn);
             MySql.Usr.adapter.Fill(MySql.Usr.table);
 
-            for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro due array e una matrice
+            for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
-                if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
-                {
-                    Dipendences.campoNostro[Convert.ToInt32(MySql.Usr.table.Rows[i][1]), Convert.ToInt32(MySql.Usr.table.Rows[i][2])] = Convert.ToChar(MySql.Usr.table.Rows[i][3]);
-                }
+                    //if (MySql.Usr.table.Rows[i]["x"] != DBNull.Value && MySql.Usr.table.Rows[i]["y"] != DBNull.Value && MySql.Usr.table.Rows[i]["Status"] != DBNull.Value)
+                    //{
+                        if (i == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
+                        {
+                            Dipendences.campoNostro[i, x] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
+
+                            if (Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus) //Contaquante sono le navi colpite
+                                Dipendences.remaningShips--;
+                        }
+                    //}
+
+                x++;
             }
             
             //Stampa la matrice (Mia)
             for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++)
             {
                 Console.Write(g6);
-                for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
+                for (x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
                     if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus)
                     {
                         Console.Write(Dipendences.colpitoStatus);
-
-                        if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus)
-                            Dipendences.remaningShips--;
                     } else if(Dipendences.campoNostro[i, x] == Dipendences.defStatus)
                     {
                         Console.Write(Dipendences.defStatus);
@@ -262,12 +268,22 @@ namespace Battleship_Online.Game_Form
             MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
             MySql.Usr.adapter.Fill(MySql.Usr.table);
 
-            for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro due array e una matrice
+            x = 0;
+
+            for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
-                if (MySql.Usr.table.Rows[i][1] != DBNull.Value && MySql.Usr.table.Rows[i][2] != DBNull.Value)
-                {
-                    Dipendences.campoNemico[Convert.ToInt32(MySql.Usr.table.Rows[i][1]), Convert.ToInt32(MySql.Usr.table.Rows[i][2])] = Convert.ToChar(MySql.Usr.table.Rows[i][3]);
-                }
+                //if (MySql.Usr.table.Rows[i]["x"] != DBNull.Value && MySql.Usr.table.Rows[i]["y"] != DBNull.Value && MySql.Usr.table.Rows[i]["Status"] != DBNull.Value)
+                //{
+                    if (i == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
+                    {
+                        Dipendences.campoNemico[i, x] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
+
+                        if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus) //Conta quante sono le navi colpite
+                            Dipendences.sunkenShips++;
+                    }
+                //}
+
+                x++;
             }
 
             MySql.Usr.table.Clear();
@@ -282,35 +298,22 @@ namespace Battleship_Online.Game_Form
             Console.WriteLine(g4);
 
             Console.SetCursorPosition(Console.WindowWidth - (Dipendences.username.Length + Dipendences.enemyUsername.Length) - 50, 2);
-            for (int i = 0; i < Dipendences.campoNemico.GetLength(0); i++)
+            for (int i = 1; i <= Dipendences.campoNemico.GetLength(0); i++)
             {
                 Console.Write(g6);
-                if (firstTime != 0)
+                for (x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
                 {
-                    for (int x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
+                    if (Dipendences.campoNemico[i - 1, x] == Dipendences.colpitoStatus)
                     {
-                        if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus)
-                        {
-                            Console.Write(Dipendences.colpitoStatus);
-
-                            Dipendences.sunkenShips++;
-                        } else if(Dipendences.campoNemico[i, x] == Dipendences.mancatoStatus)
-                        {
-                            Console.Write(Dipendences.mancatoStatus);
-                        }
-                        else
-                        {
-                            Console.Write(" ");
-                        }
+                        Console.Write(Dipendences.colpitoStatus);
+                    } else if(Dipendences.campoNemico[i - 1, x] == Dipendences.mancatoStatus)
+                    {
+                        Console.Write(Dipendences.mancatoStatus);
                     }
-
-                }
-                else
-                {
-                    for (int x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
+                    else
+                    {
                         Console.Write(" ");
-
-                    firstTime++;
+                    }
                 }
                 Console.WriteLine(g6);
                 Console.SetCursorPosition(Console.WindowWidth - (Dipendences.username.Length + Dipendences.enemyUsername.Length) - 50, 2 + i);
