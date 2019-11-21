@@ -21,8 +21,7 @@ namespace Battleship_Online.Game_Form
         {
             int pos = 0;
 
-
-            foreach (int n in Dipendences.x) //Insert my ships positions
+            foreach (int n in Dipendences.x) //Insert my ships positions in database
             {
                 MySqlCommand add = new MySqlCommand("INSERT INTO `Posizioni`(`username`, `x`, `y`, `Status`) VALUES (@usr, @x, @y, @Status)", MySql.Usr.conn); //Insert ships positions in Posizioni database
                 add.Parameters.Add("@usr", MySqlDbType.VarChar).Value = Dipendences.username;
@@ -140,7 +139,7 @@ namespace Battleship_Online.Game_Form
                     MySql.Usr.command.CommandText = "UPDATE `Posizioni` SET `Status`='" + Dipendences.mancatoStatus + "' WHERE username='" + Dipendences.enemyUsername + "' AND x='" + conX + "' AND y='" + conY + "';";
                     MySqlDataReader upNonColpito = MySql.Usr.command.ExecuteReader();
 
-                    Dipendences.campoNemico[conX, conY] = Dipendences.mancatoStatus; //Update matrice
+                    //Dipendences.campoNemico[conX, conY] = Dipendences.mancatoStatus; //Update matrice
                     //Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.mancatoStatus;
 
                     upNonColpito.Close();
@@ -153,7 +152,7 @@ namespace Battleship_Online.Game_Form
                     MySql.Usr.command.CommandText = "UPDATE `Posizioni` SET `Status`='" + Dipendences.colpitoStatus + "' WHERE username='" + Dipendences.enemyUsername + "' AND x='" + conX + "' AND y='" + conY + "';";
                     MySqlDataReader upColpito = MySql.Usr.command.ExecuteReader();
 
-                    Dipendences.campoNemico[conX, conY] = Dipendences.colpitoStatus; //Update matrice
+                    //Dipendences.campoNemico[conX, conY] = Dipendences.colpitoStatus; //Update matrice
                     //Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.colpitoStatus;
 
                     Dipendences.remaningShips--;
@@ -190,7 +189,6 @@ namespace Battleship_Online.Game_Form
 
         private static void Aggiorna() //Aggiorna la gui
         {
-
             int x = 0;
 
             Console.Clear();
@@ -241,12 +239,9 @@ namespace Battleship_Online.Game_Form
                 Console.Write(g6);
                 for (x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
-                    if(Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus)
+                    if (Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus || Dipendences.campoNostro[i, x] == Dipendences.defStatus)
                     {
-                        Console.Write(Dipendences.colpitoStatus);
-                    } else if(Dipendences.campoNostro[i, x] == Dipendences.defStatus)
-                    {
-                        Console.Write(Dipendences.defStatus);
+                        Console.Write(Dipendences.campoNostro[i, x]);
                     }
                     else
                     {
@@ -259,7 +254,6 @@ namespace Battleship_Online.Game_Form
             Console.Write(g3);
             for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++) //Dipendences.campoNostro.GetLength(0) = 10
             {
-                
                 Console.Write(g2);
             }
             Console.WriteLine(g5);
@@ -279,7 +273,9 @@ namespace Battleship_Online.Game_Form
                         Dipendences.campoNemico[i, x] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
 
                         if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus) //Conta quante sono le navi colpite
+                        {
                             Dipendences.sunkenShips++;
+                        }
                     }
                 //}
 
