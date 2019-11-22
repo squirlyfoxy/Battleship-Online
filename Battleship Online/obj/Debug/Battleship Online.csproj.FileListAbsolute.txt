@@ -56,3 +56,7 @@ C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battles
 C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.csproj.CopyComplete
 C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.exe
 C:\Users\Tommaso1173\Desktop\Nuova cartella (7)\Battleship-Online-master\Battleship-Online-master\Battleship Online\obj\Debug\Battleship Online.pdb
+C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.exe.manifest
+C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.application
+C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.exe.manifest
+C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.application
