@@ -155,7 +155,6 @@ namespace Battleship_Online.Game_Form
                     //Dipendences.campoNemico[conX, conY] = Dipendences.colpitoStatus; //Update matrice
                     //Dipendences.campoNemicoDiNuovo[conX, conY] = Dipendences.colpitoStatus;
 
-                    Dipendences.remaningShips--;
                     Dipendences.sunkenShips++;
                     upColpito.Close();
                 }
@@ -189,7 +188,7 @@ namespace Battleship_Online.Game_Form
 
         private static void Aggiorna() //Aggiorna la gui
         {
-            int x = 0;
+            int x = 0, y = 0;
 
             Console.Clear();
 
@@ -221,16 +220,17 @@ namespace Battleship_Online.Game_Form
             {
                     //if (MySql.Usr.table.Rows[i]["x"] != DBNull.Value && MySql.Usr.table.Rows[i]["y"] != DBNull.Value && MySql.Usr.table.Rows[i]["Status"] != DBNull.Value)
                     //{
-                        if (i == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
-                        {
-                            Dipendences.campoNostro[i, x] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
+                        //if (y == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
+                        //{
+                            Dipendences.campoNostro[Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]), Convert.ToInt32(MySql.Usr.table.Rows[i]["y"])] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
 
-                            if (Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus) //Contaquante sono le navi colpite
+                            if (Dipendences.campoNostro[Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]), Convert.ToInt32(MySql.Usr.table.Rows[i]["y"])] == Dipendences.colpitoStatus) //Contaquante sono le navi colpite
                                 Dipendences.remaningShips--;
-                        }
+                        //}
                     //}
 
-                x++;
+                //x++;
+                //y++;
             }
             
             //Stampa la matrice (Mia)
@@ -263,23 +263,25 @@ namespace Battleship_Online.Game_Form
             MySql.Usr.adapter.Fill(MySql.Usr.table);
 
             x = 0;
+            y = 0;
 
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
                 //if (MySql.Usr.table.Rows[i]["x"] != DBNull.Value && MySql.Usr.table.Rows[i]["y"] != DBNull.Value && MySql.Usr.table.Rows[i]["Status"] != DBNull.Value)
                 //{
-                    if (i == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
-                    {
-                        Dipendences.campoNemico[i, x] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
+                    //if (y == Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]) && x == Convert.ToInt32(MySql.Usr.table.Rows[i]["y"]))
+                    //{
+                        Dipendences.campoNemico[Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]), Convert.ToInt32(MySql.Usr.table.Rows[i]["y"])] = Convert.ToChar(MySql.Usr.table.Rows[i]["Status"]);
 
-                        if (Dipendences.campoNemico[i, x] == Dipendences.colpitoStatus) //Conta quante sono le navi colpite
+                        if (Dipendences.campoNemico[Convert.ToInt32(MySql.Usr.table.Rows[i]["x"]), Convert.ToInt32(MySql.Usr.table.Rows[i]["y"])] == Dipendences.colpitoStatus) //Conta quante sono le navi colpite
                         {
                             Dipendences.sunkenShips++;
                         }
-                    }
+                    //}
                 //}
 
-                x++;
+                //x++;
+                //y++;
             }
 
             MySql.Usr.table.Clear();
