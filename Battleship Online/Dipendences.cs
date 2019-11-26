@@ -14,7 +14,7 @@ namespace Battleship_Online
         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
         */
 
-        internal static string version = "1";
+        internal static string version = "2";
 
         internal static string lastVersionFile = "https://pastebin.com/raw/MSCZ7Mqa";
         internal static string changelogFile = "https://pastebin.com/raw/NjDie2h1";

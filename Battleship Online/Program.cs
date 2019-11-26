@@ -84,7 +84,8 @@ namespace Battleship_Online
 
             Console.WriteLine("Type: ");
             Console.WriteLine("1    -    Matchmaking");
-            Console.WriteLine("2    -    Manual");
+            Console.WriteLine("2    -    Matchmaking");
+            Console.WriteLine("3    -    Manual");
 
             do
             {
@@ -104,6 +105,10 @@ namespace Battleship_Online
 
                 case "2":
                     Instruments.Manual(); //Show manual
+                    break;
+
+                case "3":
+                    OflineGame.GUI.Initialize(); //Initialize offline game
                     break;
 
                 default:
