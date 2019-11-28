@@ -67,7 +67,7 @@ namespace Battleship_Online
             Console.Write("Press Any Key To Continue.....");
             Console.ReadKey();
 
-            Program.Continue();
+
         }
     }
 }

@@ -54,5 +54,7 @@ namespace Battleship_Online
         internal static char defStatus = 'N';
         internal static char mancatoStatus = '0';
         internal static char colpitoStatus = 'X';
+
+        internal static bool offMode = false;
     }
 }

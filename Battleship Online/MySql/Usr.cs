@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using MySql.Data;
 using MySql.Data.MySqlClient;
@@ -41,13 +42,37 @@ namespace Battleship_Online.MySql
             Dipendences.connStr = Security.AES.Decrypt(cont[0], en.GetBytes("!e2e4ab3a960c3!a"), en.GetBytes("128"));
             Dipendences.connStr= Dipendences.connStr.Remove(Dipendences.connStr.Length - 3, 3); //Cut last 3 special char
             */
+            Ping ping = new Ping();
 
-            Dipendences.connStr = "Server=51.83.46.129;Database=gioco;Uid=dio;Pwd=leonardo1;";
+            try
+            {
+                PingReply pingReply = ping.Send("51.83.46.129");
 
-            conn = new MySqlConnection(Dipendences.connStr);
-            conn.Open(); //Open connection
+                if (pingReply.Status == IPStatus.Success)
+                {
+                    Console.Title = Console.Title + " - Online";
 
-            command = conn.CreateCommand();
+                    Dipendences.connStr = "Server=51.83.46.129;Database=gioco;Uid=dio;Pwd=leonardo1;";
+
+                    conn = new MySqlConnection(Dipendences.connStr);
+                    conn.Open(); //Open connection
+
+                    command = conn.CreateCommand();
+                }
+                else
+                {
+                    //Offline Mode
+                    Console.Title = Console.Title + " - Offline";
+
+                    Dipendences.offMode = true;
+                }
+            } catch
+            {
+                //Offline Mode
+                Console.Title = Console.Title + " - Offline";
+
+                Dipendences.offMode = true;
+            }
         }
 
         internal static void Login() //Login in mysql database

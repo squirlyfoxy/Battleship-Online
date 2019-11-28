@@ -78,10 +78,6 @@ namespace Battleship_Online.Game_Form
 
             //Thread t = new Thread(Gioca); //Aggiorna mentre chiedi all'utente le variabili
             Gioca();
-
-            Program.Continue();
-
-
         }
 
         private static void Gioca()
@@ -188,7 +184,7 @@ namespace Battleship_Online.Game_Form
 
         private static void Aggiorna() //Aggiorna la gui
         {
-            int x = 0, y = 0;
+            int x = 0;
 
             Console.Clear();
 
@@ -263,7 +259,6 @@ namespace Battleship_Online.Game_Form
             MySql.Usr.adapter.Fill(MySql.Usr.table);
 
             x = 0;
-            y = 0;
 
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
