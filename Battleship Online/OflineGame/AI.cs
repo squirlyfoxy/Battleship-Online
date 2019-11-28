@@ -11,6 +11,8 @@ namespace Battleship_Online.OflineGame
 
             Random rn = new Random();
 
+            Instruments.GMMessage("Generazione navi random..."); 
+
             for(int i = 0; i < Dipendences.HOW_MANY_SHIPS; i++) //Genera le coordinate
             {
                 rifai:

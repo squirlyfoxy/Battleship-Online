@@ -39,6 +39,8 @@ namespace Battleship_Online.OflineGame
 
             Aggiorna();
 
+            //Il primo turno è il mio
+
             Console.ReadKey();
         }
 

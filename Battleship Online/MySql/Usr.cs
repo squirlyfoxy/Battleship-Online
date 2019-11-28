@@ -27,32 +27,27 @@ namespace Battleship_Online.MySql
 
         internal static void Connect() //Connect to MySql
         {
-            /*
-            //Download Connection string (enrypted)
-            var downloadClient = new WebClient();
-            downloadClient.DownloadFile(Dipendences.connStrDownload, @"C:\Battleship Online\connStr.txt");
-
-            string[] cont = System.IO.File.ReadAllLines(@"C:\Battleship Online\connStr.txt"); //Read connStr file
-
-            System.IO.File.Delete(@"C:\Battleship Online\connStr.txt"); //Delete connStr file
-
-            //Decript cont
-            Encoding en = Encoding.Default;
-
-            Dipendences.connStr = Security.AES.Decrypt(cont[0], en.GetBytes("!e2e4ab3a960c3!a"), en.GetBytes("128"));
-            Dipendences.connStr= Dipendences.connStr.Remove(Dipendences.connStr.Length - 3, 3); //Cut last 3 special char
-            */
             Ping ping = new Ping();
 
-            try
-            {
-                PingReply pingReply = ping.Send("51.83.46.129");
+                PingReply pingReply = ping.Send("51.83.46.129"); //Check if we are in online mode
 
                 if (pingReply.Status == IPStatus.Success)
                 {
                     Console.Title = Console.Title + " - Online";
 
-                    Dipendences.connStr = "Server=51.83.46.129;Database=gioco;Uid=dio;Pwd=leonardo1;";
+                    //Download Connection string (enrypted)
+                    var downloadClient = new WebClient();
+                    downloadClient.DownloadFile(Dipendences.connStrDownload, @"C:\Battleship Online\connStr.txt");
+
+                    string[] cont = System.IO.File.ReadAllLines(@"C:\Battleship Online\connStr.txt"); //Read connStr file
+
+                    System.IO.File.Delete(@"C:\Battleship Online\connStr.txt"); //Delete connStr file
+
+                    //Decript cont
+                    Encoding en = Encoding.Default;
+
+                    Dipendences.connStr = Security.AES.Decrypt(cont[0], en.GetBytes("!e2e4ab3a960c3!a"), en.GetBytes("128"));
+                    Dipendences.connStr = Dipendences.connStr.Remove(Dipendences.connStr.Length - 8, 8); //Cut last 8 special char
 
                     conn = new MySqlConnection(Dipendences.connStr);
                     conn.Open(); //Open connection
@@ -66,13 +61,6 @@ namespace Battleship_Online.MySql
 
                     Dipendences.offMode = true;
                 }
-            } catch
-            {
-                //Offline Mode
-                Console.Title = Console.Title + " - Offline";
-
-                Dipendences.offMode = true;
-            }
         }
 
         internal static void Login() //Login in mysql database
