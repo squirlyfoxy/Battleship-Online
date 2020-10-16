@@ -12,7 +12,7 @@ namespace Battleship_Online.Updates
          * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
          * Class summary: Check for update, if true show progress bar and download
          *  
-         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+         * Copyright (c) 2018-20 - All Rights Reserved
          */
         internal static void Check()
         {

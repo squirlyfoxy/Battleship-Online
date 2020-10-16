@@ -39,6 +39,8 @@ namespace Battleship_Online.Updates
 
             try
             {
+                //Not working at the moment
+                /*
                 System.IO.File.Delete(@"C:\Battleship Online\Battleship Online.exe");
                 System.IO.File.Delete(@"C:\Battleship Online\Battleship Online - Chat.exe");
                 System.IO.File.Delete(@"C:\Battleship Online\Battleship Online - Me.exe");
@@ -54,7 +56,7 @@ namespace Battleship_Online.Updates
 
                 download.DownloadFile(Dipendences.meDownload, @"C:\Battleship Online\Battleship Online - Me.exe");
 
-                download.DownloadFile(Dipendences.otherDownload, @"C:\Battleship Online\Battleship Online - Other.exe");
+                download.DownloadFile(Dipendences.otherDownload, @"C:\Battleship Online\Battleship Online - Other.exe");*/
 
             }
             catch (Exception ex)

@@ -184,8 +184,6 @@ namespace Battleship_Online.Game_Form
 
         private static void Aggiorna() //Aggiorna la gui
         {
-            int x = 0;
-
             Console.Clear();
 
             Dipendences.remaningShips = Dipendences.HOW_MANY_SHIPS;
@@ -199,6 +197,7 @@ namespace Battleship_Online.Game_Form
             {
                 Console.Write(" ");
             }
+
             Console.WriteLine(Dipendences.enemyUsername);
 
             Console.Write(g1);
@@ -206,11 +205,12 @@ namespace Battleship_Online.Game_Form
             {
                 Console.Write(g2);
             }
+
             Console.WriteLine(g4);
 
             //Acquisisci la mia matrice
-            MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.username + "'", MySql.Usr.conn);
-            MySql.Usr.adapter.Fill(MySql.Usr.table);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.username + "'", MySql.Usr.conn);
+            adapter.Fill(MySql.Usr.table);
 
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
@@ -233,16 +233,14 @@ namespace Battleship_Online.Game_Form
             for (int i = 0; i < Dipendences.campoNostro.GetLength(0); i++)
             {
                 Console.Write(g6);
-                for (x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
+                for (int x = 0; x < Dipendences.campoNostro.GetLength(1); x++)
                 {
                     if (Dipendences.campoNostro[i, x] == Dipendences.colpitoStatus || Dipendences.campoNostro[i, x] == Dipendences.defStatus)
                     {
                         Console.Write(Dipendences.campoNostro[i, x]);
                     }
                     else
-                    {
                         Console.Write(" ");
-                    }
                 }
                 Console.WriteLine(g6);
             }
@@ -252,13 +250,12 @@ namespace Battleship_Online.Game_Form
             {
                 Console.Write(g2);
             }
+
             Console.WriteLine(g5);
 
             //Scarica la matrice del mio avversario
-            MySql.Usr.adapter = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
-            MySql.Usr.adapter.Fill(MySql.Usr.table);
-
-            x = 0;
+            MySqlDataAdapter adapter2 = new MySqlDataAdapter("SELECT * FROM `Posizioni` WHERE `username` = '" + Dipendences.enemyUsername + "'", MySql.Usr.conn);
+            adapter2.Fill(MySql.Usr.table);
 
             for (int i = 0; i < MySql.Usr.table.Rows.Count; i++) //Scrivi dentro una matrice
             {
@@ -288,13 +285,14 @@ namespace Battleship_Online.Game_Form
             {
                 Console.Write(g2);
             }
+
             Console.WriteLine(g4);
 
             Console.SetCursorPosition(Console.WindowWidth - (Dipendences.username.Length + Dipendences.enemyUsername.Length) - 50, 2);
             for (int i = 1; i <= Dipendences.campoNemico.GetLength(0); i++)
             {
                 Console.Write(g6);
-                for (x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
+                for (int x = 0; x < Dipendences.campoNemico.GetLength(1); x++)
                 {
                     if (Dipendences.campoNemico[i - 1, x] == Dipendences.colpitoStatus)
                     {
@@ -304,9 +302,7 @@ namespace Battleship_Online.Game_Form
                         Console.Write(Dipendences.mancatoStatus);
                     }
                     else
-                    {
                         Console.Write(" ");
-                    }
                 }
                 Console.WriteLine(g6);
                 Console.SetCursorPosition(Console.WindowWidth - (Dipendences.username.Length + Dipendences.enemyUsername.Length) - 50, 2 + i);
@@ -317,6 +313,7 @@ namespace Battleship_Online.Game_Form
             {
                 Console.Write(g2);
             }
+
             Console.WriteLine(g5);
 
             Console.SetCursorPosition(0, Dipendences.campoNemico.GetLength(1) + 3);

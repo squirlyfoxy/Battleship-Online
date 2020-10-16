@@ -11,7 +11,7 @@ namespace Battleship_Online
         * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
         * Class summary: Console Utilities Class
         * 
-        * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+        * Copyright (c) 2018-20 - All Rights Reserved
         */
 
         internal static void MysqlMessage(string mesg) //Print Mysql Message

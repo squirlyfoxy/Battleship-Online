@@ -60,3 +60,26 @@ C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.application
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.exe.manifest
 C:\Users\foxch\Source\Repos\LeonardoBaldazzi\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.application
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csprojAssemblyReference.cache
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Game_Form.Put.resources
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Updates.Changelog.resources
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship_Online.Updates.UpdateProgess.resources
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csproj.GenerateResource.cache
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.exe
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.pdb
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csproj.CoreCompileInputs.cache
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.exe.config
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.exe.manifest
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.application
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.exe
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Battleship Online.pdb
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Google.Protobuf.dll
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\MySql.Data.dll
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Renci.SshNet.dll
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Google.Protobuf.xml
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\MySql.Data.xml
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\bin\Debug\Renci.SshNet.xml
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.exe.manifest
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.application
+C:\Users\foxch\Desktop\Battleship-Online\Battleship Online\obj\Debug\Battleship Online.csproj.CopyComplete

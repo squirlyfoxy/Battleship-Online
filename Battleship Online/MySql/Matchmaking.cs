@@ -14,7 +14,7 @@ namespace Battleship_Online.MySql
          * SubProgram summary: Log-In/Sign-Up user, download `.conf` files, check for updates
          * Class summary: Matchmaking Class
          * 
-         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+         * Copyright (c) 2018-20 - All Rights Reserved
          */
         internal static void Start()
         {
@@ -30,8 +30,8 @@ namespace Battleship_Online.MySql
 
             while (true)
             {
-                Usr.adapter = new MySqlDataAdapter("SELECT * FROM `matchmaking` WHERE 1", Usr.conn);
-                Usr.adapter.Fill(Usr.table);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM `matchmaking` WHERE 1", Usr.conn);
+                adapter.Fill(Usr.table);
 
                 usrs = new string[Usr.table.Rows.Count];
 
@@ -72,7 +72,6 @@ namespace Battleship_Online.MySql
             Console.WriteLine("I'm waiting.....");
 
             Console.Clear();
-
 
             Game_Form.Game.Initialize();
 

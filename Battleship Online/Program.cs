@@ -13,9 +13,11 @@ namespace Battleship_Online
          * 
          * Per modificare questi file prima bisogna essere provvisti dell'estensione di GitHub per visual studio per poter caricare i cambiamenti e avere sempre un backup
          * 
+         * L'idea originbale era avere più processi per il gioco ma l'idea è andata a monte per qualcosa di più semplice
+         * 
          * Prima di avviare compilare in modalità release
          * 
-         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+         * Copyright (c) 2018-20 - All Rights Reserved
          */
         static void Main(string[] args)
         {
@@ -71,7 +73,7 @@ namespace Battleship_Online
                     }
                 }
                 else
-                {
+                {/*
                     a:
                         Console.Clear();
 
@@ -84,11 +86,11 @@ namespace Battleship_Online
 
                         Dipendences.enemyUsername = "PC";
 
-
                         OflineGame.GUI.Initialize();
 
                     goto a;
-
+                    */
+                    Instruments.ErrMessage("Errore: Non connesso alla rete");
                 }
             } catch(Exception ex)
             {
@@ -107,8 +109,8 @@ namespace Battleship_Online
 
             Console.WriteLine("Type: ");
             Console.WriteLine("1    -    Matchmaking");
-            Console.WriteLine("2    -    Offline");
-            Console.WriteLine("3    -    Manual");
+            //Console.WriteLine("2    -    Offline");
+            Console.WriteLine("2    -    Manual");
 
             do
             {
@@ -118,17 +120,17 @@ namespace Battleship_Online
 
                 if (string.IsNullOrEmpty(inp) || string.IsNullOrWhiteSpace(inp) || !int.TryParse(inp, out a))
                     goto ex;
-            } while (int.Parse(inp) < 0 || int.Parse(inp) > 3);
+            } while (int.Parse(inp) < 0 || int.Parse(inp) > 2);
 
             switch (inp)
             {
                 case "1":
                     MySql.Matchmaking.Start(); //Start matchmaking
                     break;
-
+                /*
                 case "2":
                     OflineGame.GUI.Initialize(); //Initialize offline game
-                    break;
+                    break;*/
 
                 case "3":
                     Instruments.Manual(); //Show manual

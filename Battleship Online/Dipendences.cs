@@ -11,7 +11,7 @@ namespace Battleship_Online
         * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
         * Class summary: Variables Class
         * 
-        * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+        * Copyright (c) 2018-20 - All Rights Reserved
         */
 
         internal static string version = "2";
@@ -20,11 +20,14 @@ namespace Battleship_Online
         internal static string changelogFile = "https://pastebin.com/raw/NjDie2h1";
         internal static string connStrDownload = "https://pastebin.com/raw/3kUNdJbx";
 
+        //Not working at the moment
+        /*
         internal static string chatDownload = "https://onedrive.live.com/download?cid=0C7B692900D659EC&resid=C7B692900D659EC%2114379&authkey=ABHi-O9n225mLdo";
         internal static string meDownload = "https://onedrive.live.com/download?cid=0C7B692900D659EC&resid=C7B692900D659EC%2114384&authkey=ACQ-dxB3bZmwe4M";
         internal static string otherDownload = "https://onedrive.live.com/download?cid=0C7B692900D659EC&resid=C7B692900D659EC%2114391&authkey=AJNorS109sVtLrA";
         internal static string launcherDownload = "https://onedrive.live.com/download?cid=0C7B692900D659EC&resid=C7B692900D659EC%2114354&authkey=AIzPOqxddxfnms8";
-
+        */
+        
         internal static string connStr; //Connection string for mysql
 
         internal static string username;
@@ -39,8 +42,6 @@ namespace Battleship_Online
 
         internal static char[,] campoNostro = new char[10, 10]; //Campo matrix
         internal static char[,] campoNemico = new char[10, 10]; //Campo Nemico matrix
-        //internal static char[,] campoNemicoDiNuovo = new char[10, 10]; //Campo Nemico matrix
-
 
         internal static int remaningShips = HOW_MANY_SHIPS;
         internal static int meRemaningShips = HOW_MANY_SHIPS;

@@ -12,7 +12,7 @@ namespace Battleship_Online
          * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
          * Class summary: Check if it's the first time, call check for updates (if true first update, after download), download from internet other programs to run
          *  
-         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+         * Copyright (c) 2018-20 - All Rights Reserved
          */
 
         internal static void Check()

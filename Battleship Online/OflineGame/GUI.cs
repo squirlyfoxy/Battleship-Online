@@ -1,4 +1,5 @@
-﻿using System;
+﻿/*
+using System;
 
 namespace Battleship_Online.OflineGame
 {
@@ -136,3 +137,4 @@ namespace Battleship_Online.OflineGame
         }
     }
 }
+*/

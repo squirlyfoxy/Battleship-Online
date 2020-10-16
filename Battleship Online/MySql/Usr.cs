@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -17,11 +18,11 @@ namespace Battleship_Online.MySql
          * SubProgram summary: Log-In/Sign-Up user, download '.conf' files, check for updates
          * Class summary: User login / Signup
          * 
-         * Copyright (c) 2018-19 OSS inc. - All Rights Reserved
+         * Copyright (c) 2018-20 - All Rights Reserved
          */
 
         internal static MySqlConnection conn;
-        internal static MySqlDataAdapter adapter;
+        //internal static MySqlDataAdapter adapter;
         internal static DataTable table = new DataTable();
         internal static MySqlCommand command;
 
@@ -47,8 +48,8 @@ namespace Battleship_Online.MySql
                     Encoding en = Encoding.Default;
 
                     Dipendences.connStr = Security.AES.Decrypt(cont[0], en.GetBytes("!e2e4ab3a960c3!a"), en.GetBytes("128"));
-                    Dipendences.connStr = Dipendences.connStr.Remove(Dipendences.connStr.Length - 8, 8); //Cut last 8 special char
-
+                    Dipendences.connStr = Dipendences.connStr.Remove(Dipendences.connStr.Length - 14, 14); //Cut last 8 special char
+                Debug.WriteLine(Dipendences.connStr);
                     conn = new MySqlConnection(Dipendences.connStr);
                     conn.Open(); //Open connection
 
@@ -80,7 +81,7 @@ namespace Battleship_Online.MySql
             Dipendences.password = Security.AES.CalculateMD5Hash(Dipendences.password);
 
             //Check if Exist on mysql
-            adapter = new MySqlDataAdapter("SELECT * FROM usr WHERE username = '" + Dipendences.username +  "' AND password = '" + Dipendences.password + "'", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM usr WHERE username = '" + Dipendences.username +  "' AND password = '" + Dipendences.password + "'", conn);
             adapter.Fill(table);
 
             if (table.Rows.Count <= 0)
@@ -136,7 +137,7 @@ namespace Battleship_Online.MySql
                     goto reg;
 
                 //Check if usr alrealy exist on mysql database
-                adapter = new MySqlDataAdapter("SELECT * FROM usr WHERE username = '" + Dipendences.username + "'", conn);
+                MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM usr WHERE username = '" + Dipendences.username + "'", conn);
                 adapter.Fill(table);
 
                 if (!(table.Rows.Count <= 0))
